@@ -28,9 +28,9 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto max-w-2xl p-4">
-      <h2 className="mb-6 text-center text-[2rem] font-bold lg:text-[3rem]">
-        Frequently Asked Questions
+    <div className="mx-auto max-w-3xl p-4 mb-5">
+      <h2 className="mb-7 text-center text-[2rem] font-bold lg:text-[3rem]">
+        Not so Frequently Asked Questions
       </h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (

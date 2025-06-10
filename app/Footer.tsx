@@ -2,8 +2,8 @@ import { Link } from "react-router";
 
 export default function Footer() {
   return (
-    <div className="h-fit-content mt-auto h-[400px] w-full bg-black dark:bg-dark-black p-8 text-white">
-      <div className="flex flex-wrap gap-12">
+    <div className="mt-auto w-full bg-black dark:bg-dark-black p-8 flex items-center text-white justify-center">
+      <div className="flex flex-wrap gap-30">
         <div className="flex flex-col">
           <h3 className="text-2xl">Showcase</h3>
           <Link to="/">Home</Link>
@@ -20,6 +20,7 @@ export default function Footer() {
           <h3 className="text-2xl">Explanations</h3>
           <Link to="/how-it-works">How it works</Link>
           <Link to="/math">Mathematics behind it</Link>
+          <Link to="/how-it-works">Datenschutz</Link>
         </div>
         <div className="flex flex-col">
           <h3 className="text-2xl">Contact</h3>
