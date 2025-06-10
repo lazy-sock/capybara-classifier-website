@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <NavBar />
-      <main className="mt-30 text-black">
+      <main className="mt-30 text-black dark:text-white">
         <section
           id="hero"
           className="mt-12 mb-12 flex items-center justify-center px-4 lg:mt-20"
@@ -40,7 +40,7 @@ export default function Home() {
                 </Link>
                 <Link
                   to="app"
-                  className="text-primary w-fit rounded-lg border-4 bg-white px-2 py-1 text-[1.4rem] font-semibold hover:cursor-pointer lg:text-[1.7rem]"
+                  className="text-primary dark:text-dark-white w-fit rounded-lg border-4 bg-white dark:bg-dark-primary px-2 py-1 text-[1.4rem] font-semibold hover:cursor-pointer lg:text-[1.7rem]"
                 >
                   Go to App
                 </Link>

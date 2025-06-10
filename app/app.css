@@ -13,16 +13,16 @@
   --color-secondary: #647aa3;
   --color-link: #1e90ff;
 
-  --color-dark-black: #1d1a18;
-  --color-dark-white: #e5dad4;
-  --color-darker-black: #110f0e;
-  --color-dark-primary: #322c28;
-  --color-dark-secondary: #403833;
+  --color-dark-black: #000800; /*schwarz*/
+  --color-dark-white: #ecedd4; /*beige*/
+  --color-darker-black: #3A3A2F;
+  --color-dark-primary: #181A1B;/*dunkel Grau*/
+  --color-dark-secondary: #3A3A2F; /*Grün*/
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-white dark:bg-dark-primary;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
