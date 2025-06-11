@@ -8,21 +8,21 @@
   --font-winky: "WinkySans";
 
   --color-black: #1a1a17;
-  --color-white: #ecedd4;
-  --color-primary: #204116;/*Grün*/
-  --color-secondary: #647aa3;/*Blau*/
+  --color-white: #ecedd4; /* beige */
+  --color-primary: #204116; /* dark green */
+  --color-secondary: #647aa3; /* blue */
   --color-link: #1e90ff;
 
-  --color-dark-black: #000800; /*schwarz*/
-  --color-dark-white: #ecedd4; /*beige*/
-  --color-darker-black: #3A3A2F;
-  --color-dark-primary: #181A1B;/*dunkel Grau*/
-  --color-dark-secondary: #204116; /*Grün*/
+  --color-dark-black: #000800;
+  --color-dark-white: #ecedd4; /* beige */
+  --color-darker-black: #3a3a2f;
+  --color-dark-primary: #181a1b; /* dark gray */
+  --color-dark-secondary: #204116; /* dark green */
 }
 
 html,
 body {
-  @apply bg-white dark:bg-dark-primary;
+  @apply dark:bg-dark-primary bg-white;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
