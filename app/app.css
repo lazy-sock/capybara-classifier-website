@@ -9,15 +9,15 @@
 
   --color-black: #1a1a17;
   --color-white: #ecedd4;
-  --color-primary: #204116;
-  --color-secondary: #647aa3;
+  --color-primary: #204116;/*Grün*/
+  --color-secondary: #647aa3;/*Blau*/
   --color-link: #1e90ff;
 
   --color-dark-black: #000800; /*schwarz*/
   --color-dark-white: #ecedd4; /*beige*/
   --color-darker-black: #3A3A2F;
   --color-dark-primary: #181A1B;/*dunkel Grau*/
-  --color-dark-secondary: #3A3A2F; /*Grün*/
+  --color-dark-secondary: #204116; /*Grün*/
 }
 
 html,

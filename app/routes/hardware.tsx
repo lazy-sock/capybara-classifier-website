@@ -171,7 +171,7 @@ const WiringDiagram = () => {
   return (
     <div className="relative mx-auto my-16 w-full max-w-4xl select-none">
       <img
-        src="https://images.unsplash.com/photo-1581092334316-d6eb70ae5a8d?auto=format&fit=crop&w=800&q=80"
+        src="https://community.appinventor.mit.edu/uploads/default/original/2X/0/0cc1991000324f1473a3d75f5b0cb0a055b0eb93.png"
         alt="Birdhouse wiring diagram"
         className="w-full rounded-lg object-cover shadow-lg"
         loading="lazy"
@@ -179,7 +179,7 @@ const WiringDiagram = () => {
       {parts.map(({ id, name, coords, description }) => (
         <button
           key={id}
-          className={`absolute cursor-pointer rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white transition-opacity duration-300 ${
+          className={`absolute cursor-pointer rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white transition-opacity duration-300 ${
             hoveredPart === id ? "z-30 opacity-100" : "opacity-70"
           }`}
           style={{
@@ -223,11 +223,11 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Hardware() {
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-blue-50 via-white to-green-50 transition-colors duration-700 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-tr from-blue-50 via-white to-green-50 transition-colors duration-700 dark:from-dark-secondary dark:via-green-950 dark:to-dark-secondary">
       <NavBar />
       <main className="mx-auto mt-28 max-w-6xl p-4">
         <div className="mb-8 flex items-center justify-between">
-          <h1 className="flex-grow text-center text-4xl font-extrabold text-gray-900 dark:text-gray-100">
+          <h1 className="flex-grow text-center text-4xl font-extrabold text-gray-900 dark:text-dark-white">
             Hardware
           </h1>
         </div>
@@ -238,12 +238,12 @@ export default function Hardware() {
             ({ id, name, imageUrl, shortDesc, features, whyChosen, usage }) => (
               <article
                 key={id}
-                className="flex flex-col rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg md:flex-row dark:bg-gray-800"
+                className="flex flex-col rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg md:flex-row dark:bg-dark-primary"
               >
                 <div className="mb-4 flex items-center justify-center md:mb-0 md:w-1/3">
                   {icons[id]}
                 </div>
-                <div className="text-gray-900 md:w-2/3 md:pl-6 dark:text-gray-100">
+                <div className="text-gray-900 md:w-2/3 md:pl-6 dark:text-dark-white">
                   <h2 className="mb-2 text-2xl font-bold">{name}</h2>
                   <p className="mb-2 italic">{shortDesc}</p>
                   <ul className="mb-2 list-inside list-disc">
@@ -262,7 +262,7 @@ export default function Hardware() {
         </section>
 
         {/* Wiring Diagram */}
-        <h2 className="mt-16 mb-6 text-center text-3xl font-bold dark:text-gray-100">
+        <h2 className="mt-16 mb-6 text-center text-3xl font-bold dark:text-dark-white">
           Wiring Diagram
         </h2>
         <WiringDiagram />
