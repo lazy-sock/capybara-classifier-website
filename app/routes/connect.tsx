@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
-import Footer from "../Footer";
+import Footer from "../components/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [

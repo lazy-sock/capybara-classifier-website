@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
-import Footer from "../Footer";
-import Cam from "../Cam";
+import Footer from "../components/Footer";
+import Cam from "../components/Cam";
 import BirdhouseDashboard from "../components/BirdhouseDashboard";
 import RecentImageCard from "../components/RecentImageCard";
 import { BottomNav } from "~/components/BottomNav";

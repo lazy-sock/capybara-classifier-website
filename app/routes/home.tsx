@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
-import NavBar from "../NavBar";
-import Footer from "../Footer";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import { FAQ } from "../components/FAQ";
 
 export function meta({}: Route.MetaArgs) {
@@ -40,7 +40,7 @@ export default function Home() {
                 </Link>
                 <Link
                   to="app"
-                  className="text-primary dark:text-dark-white w-fit rounded-lg border-4 bg-white dark:bg-dark-primary px-2 py-1 text-[1.4rem] font-semibold hover:cursor-pointer lg:text-[1.7rem]"
+                  className="text-primary dark:text-dark-white dark:bg-dark-primary w-fit rounded-lg border-4 bg-white px-2 py-1 text-[1.4rem] font-semibold hover:cursor-pointer lg:text-[1.7rem]"
                 >
                   Go to App
                 </Link>

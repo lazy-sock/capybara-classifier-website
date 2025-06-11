@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
-import Footer from "../Footer";
-import NavBar from "~/NavBar";
+import Footer from "../components/Footer";
+import NavBar from "~/components/NavBar";
 import React, { useState, useEffect } from "react";
 
 // Animated SVG icons for hardware
@@ -179,7 +179,7 @@ const WiringDiagram = () => {
       {parts.map(({ id, name, coords, description }) => (
         <button
           key={id}
-          className={`absolute cursor-pointer rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white transition-opacity duration-300 ${
+          className={`bg-primary absolute cursor-pointer rounded-full px-3 py-1 text-xs font-semibold text-white transition-opacity duration-300 ${
             hoveredPart === id ? "z-30 opacity-100" : "opacity-70"
           }`}
           style={{
@@ -223,11 +223,11 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Hardware() {
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-blue-50 via-white to-green-50 transition-colors duration-700 dark:from-dark-secondary dark:via-green-950 dark:to-dark-secondary">
+    <div className="dark:from-dark-secondary dark:to-dark-secondary min-h-screen bg-gradient-to-tr from-blue-50 via-white to-green-50 transition-colors duration-700 dark:via-green-950">
       <NavBar />
       <main className="mx-auto mt-28 max-w-6xl p-4">
         <div className="mb-8 flex items-center justify-between">
-          <h1 className="flex-grow text-center text-4xl font-extrabold text-gray-900 dark:text-dark-white">
+          <h1 className="dark:text-dark-white flex-grow text-center text-4xl font-extrabold text-gray-900">
             Hardware
           </h1>
         </div>
@@ -238,12 +238,12 @@ export default function Hardware() {
             ({ id, name, imageUrl, shortDesc, features, whyChosen, usage }) => (
               <article
                 key={id}
-                className="flex flex-col rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg md:flex-row dark:bg-dark-primary"
+                className="dark:bg-dark-primary flex flex-col rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg md:flex-row"
               >
                 <div className="mb-4 flex items-center justify-center md:mb-0 md:w-1/3">
                   {icons[id]}
                 </div>
-                <div className="text-gray-900 md:w-2/3 md:pl-6 dark:text-dark-white">
+                <div className="dark:text-dark-white text-gray-900 md:w-2/3 md:pl-6">
                   <h2 className="mb-2 text-2xl font-bold">{name}</h2>
                   <p className="mb-2 italic">{shortDesc}</p>
                   <ul className="mb-2 list-inside list-disc">
@@ -262,7 +262,7 @@ export default function Hardware() {
         </section>
 
         {/* Wiring Diagram */}
-        <h2 className="mt-16 mb-6 text-center text-3xl font-bold dark:text-dark-white">
+        <h2 className="dark:text-dark-white mt-16 mb-6 text-center text-3xl font-bold">
           Wiring Diagram
         </h2>
         <WiringDiagram />
