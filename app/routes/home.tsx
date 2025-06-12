@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { FAQ } from "../components/FAQ";
+import ModelShowcase from "../components/ModelShowcase";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -77,6 +78,7 @@ export default function Home() {
             itself. It was trained with images from an image generation model
             and still recognizes real birds easily.
           </p>
+          <ModelShowcase />
           <h3 className="text-center text-[2.5rem]">Statistics</h3>
           <h3 className="text-center text-[2.5rem]">Want to learn more?</h3>
           <div className="flex w-full flex-col justify-center gap-[100px] lg:flex-row">
