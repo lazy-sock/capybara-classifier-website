@@ -33,14 +33,14 @@ export default function App() {
   return (
     <div>
       <main className="mx-auto mt-12 max-w-[1000px] p-2">
-        <h1 className="text-center text-[2rem] font-bold lg:text-[2.5rem]">
+        <h1 className="text-center text-[2rem] font-semibold lg:text-[2.5rem]">
           Live Camera
         </h1>
         <Cam />
         {/* <BirdhouseDashboard /> */}
 
         <section className="space-y-4">
-          <h2 className="text-center text-2xl font-semibold">
+          <h2 className="text-center text-[2rem] font-semibold">
             Recent Sightings
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
