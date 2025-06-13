@@ -71,15 +71,34 @@ export const BottomNav = () => {
   const bubbleRadius = 24; // half of bubble size (48x48)
 
   return (
-    <div className="fixed bottom-6 left-1/2 z-10 w-[90%] max-w-md -translate-x-1/2">
-      {/* Common relative container for navbar + bubble */}
-      <div className="relative">
-        {/* Navbar with hole in the mask */}
+    <div className="relative">
+      <div className="fixed bottom-6 left-1/2 z-10 w-[90%] max-w-md -translate-x-1/2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100px"
+          className="absolute z-0"
+          style={{ left: 0, top: 0 }}
+        >
+          <defs>
+            <mask id="navbarMask">
+              <rect width="100%" height="100%" fill="white" />
+              <path
+                fill="black"
+                d="M0 6L0 8C12.6512 12.2911 24.7136 15.8978 36 23.5201C48.747 32.1287 55.5251 45.1789 73 41.6204C82.5498 39.6756 90.2195 30.4457 97 24.0355C107.135 14.4536 116.79 7.0228 130 3C122.87-3.22852 108.124-3.77869 99-5.42439C86.7211-7.63904 74.5586-10.51542 62-9.96065C53.6654-9.59247 45.0654-6.88929 37-4.87346C24.526-1.755747 12.0074 1.368 0 6z"
+              />
+            </mask>
+          </defs>
+        </svg>
+        {/* Common relative container for navbar + bubble */}
+        {/* SVG mask positioned behind navbar */}
+
+        {/* Navbar with SVG mask applied */}
         <div
-          className="bg-primary flex justify-between rounded-full px-4 py-2 shadow-lg"
+          className="bg-primary relative z-5 flex justify-between rounded-full px-4 py-2 shadow-lg"
           style={{
-            maskImage: `radial-gradient(circle ${bubbleRadius}px at ${bubbleLeft}px 3px, transparent ${bubbleRadius - 1}px, black ${bubbleRadius}px)`,
-            WebkitMaskImage: `radial-gradient(circle ${bubbleRadius}px at ${bubbleLeft}px 3px, transparent ${bubbleRadius - 1}px, black ${bubbleRadius}px)`,
+            mask: `url(#navbarMask)`,
+            WebkitMask: `url(#navbarMask)`,
           }}
         >
           {tabs.map((tab, index) => (
@@ -108,7 +127,7 @@ export const BottomNav = () => {
           ))}
         </div>
 
-        {/* Bubble, positioned absolutely */}
+        {/* Bubble, positioned absolutely on top */}
         <motion.div
           className="bg-secondary absolute z-20 flex h-12 w-12 items-center justify-center rounded-full"
           style={{ left: bubbleLeft - bubbleRadius, top: -28 }}
