@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { FAQ } from "../components/FAQ";
 import ModelShowcase from "../components/ModelShowcase";
 
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Capybara protects your Birdhouse" },
@@ -82,33 +83,41 @@ export default function Home() {
           <h3 className="text-center text-[2.5rem]">Statistics</h3>
           <h3 className="text-center text-[2.5rem]">Want to learn more?</h3>
           <div className="flex w-full flex-col justify-center gap-[100px] lg:flex-row">
-            <div>
-              <button className="hover:cursor-pointer">
-                <svg
-                  id="visual"
-                  viewBox="0 0 450 450"
-                  width="450"
-                  height="450"
-                  xmlns="http://www.w3.org/2000/svg"
-                  version="1.1"
-                >
-                  <rect
-                    x="0"
-                    y="0"
+            <a href="/ai#dataset">
+              <div>
+                <button className="hover:cursor-pointer" >
+                  <svg
+                    id="visual"
+                    viewBox="0 0 450 450"
                     width="450"
                     height="450"
-                    fill="#204116"
-                  ></rect>
-                  <g transform="translate(204.38153791676166 225.8110429923688)">
-                    <path
-                      d="M118.4 -135.5C155.3 -110.1 188.4 -74.6 200.4 -31.6C212.4 11.3 203.2 61.6 177.9 100.1C152.6 138.6 111.2 165.1 68.4 175.1C25.7 185.1 -18.5 178.5 -57.8 162.6C-97.2 146.6 -131.7 121.3 -149 87.8C-166.2 54.2 -166.2 12.5 -162.2 -31.8C-158.1 -76 -150.1 -122.6 -122.4 -149.7C-94.7 -176.9 -47.4 -184.4 -3.3 -180.5C40.7 -176.5 81.4 -161 118.4 -135.5"
-                      fill="#FFFFFF"
-                    ></path>
-                  </g>
-                </svg>
-              </button>
-              <h3 className="-mt-[30px] text-center text-[2rem]">Dataset</h3>
-            </div>
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                  >
+                    <rect
+                      x="0"
+                      y="0"
+                      width="450"
+                      height="450"
+                      fill="#204116"
+                    ></rect>
+                    <g transform="translate(204.38153791676166 225.8110429923688)">
+                      <path
+                        d="M118.4 -135.5C155.3 -110.1 188.4 -74.6 200.4 -31.6C212.4 11.3 203.2 61.6 177.9 100.1C152.6 138.6 111.2 165.1 68.4 175.1C25.7 185.1 -18.5 178.5 -57.8 162.6C-97.2 146.6 -131.7 121.3 -149 87.8C-166.2 54.2 -166.2 12.5 -162.2 -31.8C-158.1 -76 -150.1 -122.6 -122.4 -149.7C-94.7 -176.9 -47.4 -184.4 -3.3 -180.5C40.7 -176.5 81.4 -161 118.4 -135.5"
+                        fill="#ecedd4"
+                      ></path>
+                    </g>
+                    <g transform="translate(225, 225)">
+                      <svg x="-80" y="-60" width="140" height="140" viewBox="0 0 16 16" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+                      </svg>
+                    </g>
+                  </svg>
+                </button>
+                <h3 className="-mt-[30px] text-center text-[2rem]">Dataset</h3>
+              </div>
+            </a>
             <div>
               <button className="hover:cursor-pointer">
                 <svg
@@ -129,7 +138,7 @@ export default function Home() {
                   <g transform="translate(226.66265055739558 215.8023946868828)">
                     <path
                       d="M119.1 -144.7C147.3 -118.2 158.3 -74 164.2 -30.5C170.1 13.1 170.8 56 153.6 91.4C136.4 126.8 101.4 154.5 60 173.3C18.6 192 -29.2 201.7 -70.7 188.9C-112.2 176.1 -147.5 140.8 -162.3 100.7C-177.2 60.6 -171.7 15.6 -159.6 -23.8C-147.4 -63.2 -128.7 -97.1 -101 -123.7C-73.3 -150.3 -36.6 -169.7 4.4 -174.9C45.4 -180.1 90.8 -171.3 119.1 -144.7"
-                      fill="#FFFFFF"
+                      fill="#ecedd4"
                     ></path>
                   </g>
                 </svg>
@@ -156,7 +165,7 @@ export default function Home() {
                   <g transform="translate(219.1576523566743 210.8573209521628)">
                     <path
                       d="M128.9 -145.3C164.9 -123.5 190.3 -80.8 199.2 -34.5C208.2 11.8 200.6 61.7 177.1 102.1C153.6 142.6 114.1 173.7 70.5 186.5C26.9 199.2 -20.7 193.6 -65.7 178.2C-110.6 162.8 -152.7 137.6 -174 100.6C-195.2 63.5 -195.6 14.5 -181.7 -26.4C-167.7 -67.2 -139.5 -99.9 -106.8 -122.2C-74.1 -144.6 -37.1 -156.7 4.7 -162.3C46.5 -167.9 93 -167.1 128.9 -145.3"
-                      fill="#FFFFFF"
+                      fill="#ecedd4"
                     ></path>
                   </g>
                 </svg>
