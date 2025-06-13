@@ -1,20 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 interface DropdownProps {
-  options: string[];
   label: string;
-  onSelect: (option: string) => void;
+  options: React.ReactNode[];
 }
 
-const Dropdown: React.FC<DropdownProps> = ({
-  options,
-  label,
-  onSelect,
-}: DropdownProps) => {
+const Dropdown: React.FC<DropdownProps> = ({ label, options }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Schließen des Dropdowns, wenn außerhalb geklickt wird
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -24,16 +19,12 @@ const Dropdown: React.FC<DropdownProps> = ({
         setIsOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  const handleSelect = (option: string) => {
-    onSelect(option);
-    setIsOpen(false);
-  };
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
@@ -59,16 +50,12 @@ const Dropdown: React.FC<DropdownProps> = ({
       </button>
 
       {isOpen && (
-        <div className="ring-opacity-5 absolute mt-2 mr-2 rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none">
-          <div className="py-1">
-            {options.map((option) => (
-              <button
-                key={option}
-                onClick={() => handleSelect(option)}
-                className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              >
+        <div className="ring-opacity-5 absolute mt-2 mr-2 rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none z-50">
+          <div className="py-1 space-y-1 px-2">
+            {options.map((option, index) => (
+              <div key={index} className="w-full">
                 {option}
-              </button>
+              </div>
             ))}
           </div>
         </div>
