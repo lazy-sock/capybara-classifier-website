@@ -83,55 +83,87 @@ export default function HowItWorks() {
   return (
     <div>
       <NavBar />
-      <main className="mx-auto w-full max-w-[1000px] pt-30">
-        <h1 className="text-center text-[3rem] font-bold">
-          Artificial Intelligence
-        </h1>
-        <h2 className="text-[2rem] font-bold">Architecture</h2>
-        <div className="flex flex-wrap gap-8 font-semibold">
-          <div className="flex h-[110px] w-[110px] items-center justify-center rounded-lg border-3 border-black p-2 text-center">
-            Input Image (224×224×3)
-          </div>
-          <div className="flex h-[110px] w-[110px] items-center justify-center rounded-lg border-3 border-black p-2 text-center">
-            ResNet50 Backbone
-          </div>
-          <div className="flex h-[110px] w-[110px] items-center justify-center rounded-lg border-3 border-black p-2 text-center">
-            Attention Module 1
-          </div>
-          <div className="flex h-[110px] w-[110px] items-center justify-center rounded-lg border-3 border-black p-2 text-center">
-            Attention Module 2
-          </div>
-          <div className="flex h-[110px] w-[110px] items-center justify-center rounded-lg border-3 border-black p-2 text-center">
-            Global Average Pooling
-          </div>
-          <div className="flex h-[110px] w-[110px] items-center justify-center rounded-lg border-3 border-black p-2 text-center">
-            Feature Enhancement Layers
-          </div>
-          <div className="flex h-[110px] w-[110px] items-center justify-center rounded-lg border-3 border-black p-2 text-center">
-            Classification Head
-          </div>
-        </div>
-        <h2 className="text-[2rem] font-bold">Dataset</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {data.map((item) => (
-            <div className="relative group" key={item.class}>
-              <div className="rounded-xl shadow-lg p-4 bg-white hover:shadow-2xl">
-                <img src={`/images/${item.class.toLowerCase()}.jpg`} alt={item.class} className="w-full h-50 object-cover rounded-md mb-2" />
-                <h3 className="text-lg font-medium">{item.class}</h3>
-                <p className="text-sm text-gray-500">{item.count} Bilder</p>
+        <main className="mx-auto w-full max-w-[1100px] pt-30 pb-30">
+          <h1 className="text-center text-[5rem] font-bold">
+            Artificial Intelligence
+          </h1>
+          <div className="bg-secondary rounded-4xl p-5 mt-6">
+            <h2 className="text-[2rem] font-bold">Architecture</h2>
+            <div className="flex flex-wrap gap-8 font-semibold">
+              <div className="flex h-[120px] w-[120px] items-center justify-center rounded-lg border-3 border-black dark:border-dark-white p-2 text-center text-[1.15rem] ">
+                Input Image (224×224×3)
               </div>
-              <div className=" absolute mt-3 p-4 bg-white shadow-md rounded-xl border border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-100">
-                <h4 className="font-semibold text-gray-800 mb-1">{item.lat}</h4>
-                <p className="text-sm text-gray-600">{item.description}</p>
+              <div className="flex h-[120px] w-[120px] items-center justify-center rounded-lg border-3 border-black dark:border-dark-white p-2 text-center text-[1.15rem]">
+                ResNet50 Backbone
+              </div>
+              <div className="flex h-[120px] w-[120px] items-center justify-center rounded-lg border-3 border-black dark:border-dark-white p-2 text-center text-[1.15rem]">
+                Attention Module 1
+              </div>
+              <div className="flex h-[120px] w-[120px] items-center justify-center rounded-lg border-3 border-black dark:border-dark-white p-2 text-center text-[1.15rem]">
+                Attention Module 2
+              </div>
+              <div className="flex h-[120px] w-[120px] items-center justify-center rounded-lg border-3 border-black dark:border-dark-white p-2 text-center text-[1.15rem]">
+                Global Average Pooling
+              </div>
+              <div className="flex h-[120px] w-[120px] items-center justify-center rounded-lg border-3 border-black dark:border-dark-white p-2 text-center text-[1.15rem]">
+                Feature Enhancement Layers
+              </div>
+              <div className="flex h-[120px] w-[110px] items-center justify-center rounded-lg border-3 border-black dark:border-dark-white  p-2 text-center text-[1.15rem]">
+                Classification Head
               </div>
             </div>
-          ))}
-        </div>
-        <h2 className="text-[2rem] font-bold">Training</h2>
-        <h2 className="text-[2rem] font-bold">Accuracy</h2>
-      </main>
-      <Footer />
+          </div>
+        </main>
+        <svg
+          className="h-[100px] w-full"
+          viewBox="0 460 960 80"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 475L26.7 480.8C53.3 486.7 106.7 498.3 160 501.5C213.3 504.7 266.7 499.3 320 489.7C373.3 480 426.7 466 480 464C533.3 462 586.7 472 640 483.2C693.3 494.3 746.7 506.7 800 503.2C853.3 499.7 906.7 480.3 933.3 470.7L960 461L960 541L933.3 541C906.7 541 853.3 541 800 541C746.7 541 693.3 541 640 541C586.7 541 533.3 541 480 541C426.7 541 373.3 541 320 541C266.7 541 213.3 541 160 541C106.7 541 53.3 541 26.7 541L0 541Z"
+            fill="#204116"
+          />
+        </svg>
+        <section id="dataset" className="bg-primary">
+          <main className="mx-auto w-full max-w-[1100px] pt-10">
+            <h2 className="text-[3rem] font-bold text-left pb-5 text-white">Dataset</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {data.map((item) => (
+                <div className="relative group" key={item.class}>
+                  <div className="rounded-xl shadow-lg p-4 bg-white hover:shadow-2xl">
+                    <img src={`/images/${item.class.toLowerCase()}.jpg`} alt={item.class} className="w-full h-50 object-cover rounded-md mb-2" />
+                    <h3 className="text-lg font-medium text-darker-black">{item.class}</h3>
+                    <p className="text-sm text-gray-500">{item.count} Bilder</p>
+                  </div>
+                  <div className=" absolute mt-3 p-4 bg-white shadow-md rounded-xl border border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-100">
+                    <h4 className="font-semibold text-gray-800 mb-1">{item.lat}</h4>
+                    <p className="text-sm text-gray-600">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </main>
+        </section>
+        <svg
+          className="h-[100px] w-full rotate-180"
+          viewBox="0 460 960 60"
+          width="100%"
+          height="100"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 503L26.7 499.5C53.3 496 106.7 489 160 480.8C213.3 472.7 266.7 463.3 320 469C373.3 474.7 426.7 495.3 480 495.8C533.3 496.3 586.7 476.7 640 472.8C693.3 469 746.7 481 800 487C853.3 493 906.7 493 933.3 493L960 493L960 540L933.3 540C906.7 540 853.3 540 800 540C746.7 540 693.3 540 640 540C586.7 540 533.3 540 480 540C426.7 540 373.3 540 320 540C266.7 540 213.3 540 160 540C106.7 540 53.3 540 26.7 540L0 540Z"
+            fill="#204116"
+          />
+        </svg>
+        <main className="mx-auto w-full max-w-[1100px] pt-30">
+          <h2 className="text-[2rem] font-bold">Training</h2>
+          <h2 className="text-[2rem] font-bold">Accuracy</h2>
+        </main>
+        <Footer />
     </div>
-
+      
   );
 }
