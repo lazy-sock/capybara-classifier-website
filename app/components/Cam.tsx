@@ -18,7 +18,7 @@ export default function Cam() {
 
   const handleImageError = () => {
     setStreamReady(false);
-    setError("⚠️ Could not load camera stream. Check connection or IP.");
+    setError("Could not load camera stream");
   };
 
   return (
@@ -26,11 +26,11 @@ export default function Cam() {
       <div className="camera-stream-container flex flex-col items-center justify-center p-4">
         {/* Placeholder or error */}
         {!streamReady && (
-          <div className="flex aspect-video w-full max-w-md items-center justify-center rounded-lg bg-gray-200 text-gray-600 shadow-inner">
+          <div className="bg-secondary flex aspect-video w-full max-w-md items-center justify-center rounded-lg text-white shadow-inner">
             {error ? (
               <div className="px-4 text-center">{error}</div>
             ) : (
-              <div className="px-4 text-center">🔄 Connecting to camera...</div>
+              <div className="px-4 text-center">Connecting to camera...</div>
             )}
           </div>
         )}
