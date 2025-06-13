@@ -2,11 +2,12 @@ import { Link } from "react-router";
 
 export default function Footer() {
   return (
-    <div className="mt-auto w-full bg-black dark:bg-dark-black p-8 flex items-center text-white justify-center">
+    <div className="dark:bg-dark-black mt-auto flex w-full items-center justify-center bg-black p-8 text-white">
       <div className="flex flex-wrap gap-30">
         <div className="flex flex-col">
           <h3 className="text-2xl">Showcase</h3>
           <Link to="/">Home</Link>
+          <Link to="/ai">Artificial Intelligence</Link>
           <Link to="/hardware">Hardware</Link>
         </div>
         <div className="flex flex-col">
@@ -24,7 +25,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col">
           <h3 className="text-2xl">Contact</h3>
-          <a href="">GitHub</a>
+          <a href="https://github.com/lazy-sock/capybara-classifier">GitHub</a>
         </div>
       </div>
     </div>
