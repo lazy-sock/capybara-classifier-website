@@ -37,7 +37,7 @@ export default function App() {
           Live Camera
         </h1>
         <Cam />
-        <BirdhouseDashboard />
+        {/* <BirdhouseDashboard /> */}
 
         <section className="space-y-4">
           <h2 className="text-center text-2xl font-semibold">
