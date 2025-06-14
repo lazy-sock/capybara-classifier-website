@@ -72,14 +72,16 @@ export default function Home() {
           <h2 className="mb-8 text-center text-[2rem] font-semibold lg:text-[3rem]">
             Artificial Intelligence
           </h2>
-          <p className="mx-auto mb-10 max-w-[1000px] text-center text-[1.25rem]">
+          <p className="mx-auto mb-10 max-w-[1000px] p-6 text-center text-[1.25rem]">
             We created an AI algorithm to classify birds. That's not a
             particularly new idea. But this task is done quite well. The AI not
             only classifies birds, but is also able to learn new species by
             itself. It was trained with images from an image generation model
             and still recognizes real birds easily.
           </p>
-          <ModelShowcase />
+          <div className="p-6">
+            <ModelShowcase />
+          </div>
           <h3 className="mt-12 mb-2 text-center text-[2.5rem]">Statistics</h3>
           <div className="max-w- mx-auto mb-12 flex w-full max-w-[800px] flex-wrap items-center justify-center gap-6 max-lg:flex-col">
             <div className="bg-secondary w-fit rounded-xl px-2 py-1.5">

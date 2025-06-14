@@ -87,7 +87,7 @@ const ImageClassifier: React.FC = () => {
       <h2 className="mb-4 text-center text-2xl font-semibold">
         Bird Image Classifier
       </h2>
-      <div className="flex gap-6">
+      <div className="flex gap-6 max-lg:flex-col">
         <div className="text-secondary flex h-[400px] w-full items-center justify-center rounded-xl bg-white p-2">
           {selectedWindow == "picture" ? (
             <div>
@@ -120,7 +120,7 @@ const ImageClassifier: React.FC = () => {
             <h3 className="mt-4 text-2xl">{classes[result[0]]}</h3>
           )}
         </div>
-        <div className="flex flex-col justify-center gap-6">
+        <div className="flex justify-center gap-6 lg:flex-col">
           <button
             onClick={() => setSelectedWindow("picture")}
             className="text- flex h-[100px] w-[150px] cursor-pointer items-center justify-center rounded-xl bg-white bg-cover text-black"
