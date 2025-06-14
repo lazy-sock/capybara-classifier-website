@@ -10,5 +10,6 @@ export default [
   route("get_started", "routes/get_started.tsx"),
   route("ai", "routes/ai.tsx"),
   route("code", "routes/code.tsx"),
+  route("settings", "routes/settings.tsx"),
   route("image/:id", "routes/image_page.tsx"),
 ] satisfies RouteConfig;
