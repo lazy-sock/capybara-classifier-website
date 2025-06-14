@@ -51,7 +51,7 @@ export default function App() {
         </section>
       </main>
       <Footer />
-      <BottomNav />
+      <BottomNav selected={0} />
     </div>
   );
 }

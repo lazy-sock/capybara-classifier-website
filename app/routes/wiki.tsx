@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
 import Footer from "../components/Footer";
+import { BottomNav } from "~/components/BottomNav";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -20,6 +21,7 @@ export default function Wiki() {
             to={"/wiki/" + "rotkehlchen"}
           ></Link>
         </div>
+        <BottomNav selected={3} />
       </main>
     </div>
   );

@@ -57,8 +57,8 @@ const tabs = [
   },
 ];
 
-export const BottomNav = () => {
-  const [active, setActive] = useState(0);
+export const BottomNav = ({ selected = 0 }) => {
+  const [active, setActive] = useState(selected || 0);
   const [bubbleLeft, setBubbleLeft] = useState(0);
   const buttonRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
