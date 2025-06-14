@@ -6,15 +6,14 @@ export default function NavBar() {
     <nav className="dark:bg-dark-primary fixed top-0 left-0 z-10 flex h-20 w-screen items-center gap-8 bg-white text-xl lg:h-28 lg:px-4">
       <Link
         to="/"
-        className="mr-auto ml-2 flex gap-6 text-[1.75rem] font-bold lg:ml-20 lg:text-[2.5rem]"
+        className="mr-auto ml-6 flex items-center gap-3 text-[1.75rem] font-bold lg:ml-20 lg:gap-6 lg:text-[2.5rem]"
       >
         <svg
-          width="80px"
           viewBox="0 0 132.42969 98.122505"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          className="dark:stroke-dark-white stroke-black"
+          className="dark:stroke-dark-white w-[70px] stroke-black lg:w-[80px]"
         >
           <g transform="translate(-40.825218,-98.050333)">
             <image
@@ -159,7 +158,7 @@ export default function NavBar() {
             />
           </g>
         </svg>
-        <p className="dark:text-dark-white text-black">Capybara</p>
+        <p className="dark:text-dark-white h-fit text-black">Capybara</p>
       </Link>
       <div className="mr-10">
         <Dropdown
