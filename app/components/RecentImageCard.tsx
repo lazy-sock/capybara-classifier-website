@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 type RecentImage = {
   id: number;
   imageUrl?: string;
@@ -6,7 +8,10 @@ type RecentImage = {
 };
 
 const RecentImageCard: React.FC<{ image: RecentImage }> = ({ image }) => (
-  <div className="flex w-[140px] flex-col items-center rounded-xl bg-white p-2 shadow">
+  <Link
+    to={`/image/${image.id}`}
+    className="flex w-[140px] flex-col items-center rounded-xl bg-white p-2 shadow"
+  >
     <img
       src={
         image.imageUrl || "https://via.placeholder.com/140x100.png?text=Bird"
@@ -18,7 +23,7 @@ const RecentImageCard: React.FC<{ image: RecentImage }> = ({ image }) => (
       <p className="text-sm font-semibold text-gray-700">{image.species}</p>
       <p className="text-xs text-gray-400">{image.time}</p>
     </div>
-  </div>
+  </Link>
 );
 
 export default RecentImageCard;
