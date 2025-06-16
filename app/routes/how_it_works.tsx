@@ -14,8 +14,8 @@ export default function HowItWorks() {
   return (
     <div>
       <NavBar />
-      <main className="mx-auto w-full max-w-[1000px] pt-16">
-        <h1 className="text-center text-[3rem] font-bold">How it works</h1>
+      <main className="mx-auto w-full max-w-[1000px] mt-40">
+        <h1 className="text-center text-[3rem] font-bold text-black dark:text-dark-white">How it works</h1>
       </main>
     </div>
   );

@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <NavBar />
-      <main className="mt-30 text-black dark:text-white">
+      <main className="mt-35 text-black dark:text-white">
         <section
           id="hero"
           className="mt-12 mb-12 flex items-center justify-center px-4 lg:mt-20"
