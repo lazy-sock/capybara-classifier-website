@@ -31,6 +31,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <link
+          rel="icon"
+          href="/favicon.svg"
+          type="image/svg+xml"
+          sizes="any"
+        ></link>
       </head>
       <body className="font-winky">
         {children}
