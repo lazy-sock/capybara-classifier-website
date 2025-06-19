@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import Dropdown from "./Dropdown";
+import LanguageSwitch from "./LanguageSwitch";
 
 export default function NavBar() {
   return (
@@ -207,7 +208,7 @@ export default function NavBar() {
           ]}
         />
       </div>
-      <div className="mr-12 hidden max-w-2xl flex-row gap-12 text-2xl lg:flex">
+      <div className="mr-12 hidden max-w-2xl flex-row gap-12 text-2xl md:flex">
         <Link to="/hardware" className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -241,6 +242,7 @@ export default function NavBar() {
           </svg>
           <p className="dark:text-dark-white text-black">Code</p>
         </Link>
+        <LanguageSwitch />
       </div>
     </nav>
   );
