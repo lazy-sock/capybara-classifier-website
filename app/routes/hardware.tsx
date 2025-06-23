@@ -140,6 +140,7 @@ const hardwareData = [
   },
 ];
 
+
 // Wiring diagram component with hoverable tooltips
 const WiringDiagram = () => {
   const [hoveredPart, setHoveredPart] = useState<string | null>(null);
@@ -271,3 +272,4 @@ export default function Hardware() {
     </div>
   );
 }
+

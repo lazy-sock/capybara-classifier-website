@@ -5,6 +5,11 @@ import Footer from "../components/Footer";
 import { FAQ } from "../components/FAQ";
 import ModelShowcase from "../components/ModelShowcase";
 import AIBlobs from "../components/AIBlobs";
+import { Canvas } from "@react-three/fiber";
+import { BoxGeometry } from "three";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { Suspense } from "react";
+
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,6 +17,12 @@ export function meta({}: Route.MetaArgs) {
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
+function HardwareModel() {
+  const { scene } = useGLTF("/models/test.glb");
+  scene.position.set(0, 0, 0);
+  return <primitive object={scene} scale={1.5} />;
+}
+useGLTF.preload("/models/test.glb");
 
 export default function Home() {
   return (
@@ -126,8 +137,23 @@ export default function Home() {
         <section id="faq" className="mt-12">
           <FAQ />
         </section>
+        <section id="smart-birdhouse" className="mt-12">
+          <h2 className="text-center text-[2rem] font-bold lg:text-[3rem]">
+            Smart Birdhouse
+          </h2>
+          <div className="mx-auto mt-8 h-[500px] w-full max-w-[800px]">
+            <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
+              <ambientLight intensity={5}/>
+              <directionalLight position={[5, 5, 10]} intensity={10} />
+              <OrbitControls makeDefault target={[0, 0, 0]}  minDistance={1} maxDistance={10}/>
+              <mesh>
+                <HardwareModel/>
+              </mesh>
+            </Canvas>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
-  );
+  ); 
 }

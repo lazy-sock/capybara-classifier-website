@@ -11,6 +11,8 @@
   "dependencies": {
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.3.0",
+    "@react-three/drei": "^10.3.0",
+    "@react-three/fiber": "^9.1.2",
     "isbot": "^5.1.17",
     "motion": "^12.16.0",
     "onnxruntime-web": "^1.22.0",
@@ -18,7 +20,8 @@
     "react-dom": "^19.1.0",
     "react-router": "^7.3.0",
     "react-router-dom": "^7.6.2",
-    "recharts": "^2.15.3"
+    "recharts": "^2.15.3",
+    "three": "^0.177.0"
   },
   "devDependencies": {
     "@react-router/dev": "^7.3.0",
