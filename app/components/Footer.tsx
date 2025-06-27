@@ -28,8 +28,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white my-4 w-full max-w-7xl mx-auto"></div>
-      <div className="flex justify-around">
-        <div className="flex text-left">
+      <div className="flex justify-around mt-1">
+        <div className="flex text-left items-center">
            <a> © Capybara Classifier 2025</a>
         </div>
        <div className="flex items-center gap-x-10">

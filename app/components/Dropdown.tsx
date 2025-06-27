@@ -30,27 +30,15 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options }) => {
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         type="button"
-        className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none"
+        className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium text-gray-700 shadow-sm dark:hover:bg-darker-black hover:bg-green-50 focus:outline-none rounded-2xl"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        {label}
-        <svg
-          className="-mr-1 ml-2 h-5 w-5"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z"
-            clipRule="evenodd"
-          />
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-6 dark:fill-white fill-black"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+
       </button>
 
       {isOpen && (
-        <div className="ring-opacity-5 absolute mt-2 mr-2 rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none z-50">
+        <div className="ring-opacity-5 absolute mt-2 right-0 rounded-md bg-white shadow-lg ring-1 ring-black focus:outline-none z-50">
           <div className="py-1 space-y-1 px-2">
             {options.map((option, index) => (
               <div key={index} className="w-full">
