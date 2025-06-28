@@ -243,7 +243,7 @@ export default function NavBar() {
           </svg>
           <p className="dark:text-dark-white text-black">Code</p>
         </Link>
-        {/* <LanguageSwitch /> */}
+        <LanguageSwitch />
       </div>
     </nav>
   );
