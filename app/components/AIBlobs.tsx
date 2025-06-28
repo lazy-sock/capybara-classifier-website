@@ -69,7 +69,7 @@ export default function AIBlobs() {
             }}
           >
             <Link
-              to={"/ai#dataset"}
+              to={"/ai#algorithm"}
               className="block h-full w-full hover:cursor-pointer"
             ></Link>
           </div>
@@ -100,7 +100,7 @@ export default function AIBlobs() {
             }}
           >
             <Link
-              to={"/ai#dataset"}
+              to={"/ai#usage"}
               className="block h-full w-full hover:cursor-pointer"
             ></Link>
           </div>
