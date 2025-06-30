@@ -7,16 +7,19 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "What is your return policy?",
-    answer: "We offer a 30-day money-back guarantee with no questions asked.",
+    question: "What is BWKI?",
+    answer:
+      "BWKI is a german acronym for 'Besser Wissen, Klüger Investieren', which translates to 'Better Knowledge, Smarter Investing'.",
   },
   {
-    question: "How long does shipping take?",
-    answer: "Shipping typically takes 5–7 business days within the US.",
+    question: "How do I use the Capybara Classifier?",
+    answer:
+      "To use the Capybara Classifier, simply upload your images and let the AI analyze them. It will classify the images based on the trained model. You can also use it in your own birdhouse yourself. All necessary files and information is either here or on github. But be aware that this is a bit more complex.",
   },
   {
-    question: "Do you ship internationally?",
-    answer: "Yes, we ship to most countries worldwide.",
+    question: "Can I contribute to the project?",
+    answer:
+      "If you want to contribute, you can do so by visiting the GitHub repository.",
   },
 ];
 
@@ -28,7 +31,7 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto max-w-3xl p-4 mb-5">
+    <div className="mx-auto mb-5 max-w-3xl p-4">
       <h2 className="mb-7 text-center text-[2rem] font-bold lg:text-[3rem]">
         Not so Frequently Asked Questions
       </h2>
