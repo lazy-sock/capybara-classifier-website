@@ -10,7 +10,6 @@ import { BoxGeometry } from "three";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Suspense } from "react";
 
-
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Capybara protects your Birdhouse" },
@@ -95,19 +94,19 @@ export default function Home() {
           </div>
           <h3 className="mt-12 mb-2 text-center text-[2.5rem]">Statistics</h3>
           <div className="max-w- mx-auto mb-12 flex w-full max-w-[800px] flex-wrap items-center justify-center gap-6 max-lg:flex-col">
-            <div className="bg-secondary w-fit rounded-xl px-2 py-1.5">
+            <div className="bg-secondary dark:bg-dark-secondary w-fit rounded-xl px-2 py-1.5">
               <div className="text-[2rem] font-semibold">11</div>
               <div className="-mt-2 text-[1.25rem]">Number of Classes</div>
             </div>
-            <div className="bg-secondary w-fit rounded-xl px-2 py-1.5">
+            <div className="bg-secondary dark:bg-dark-secondary w-fit rounded-xl px-2 py-1.5">
               <div className="text-[2rem] font-semibold">90%</div>
               <div className="-mt-2 text-[1.25rem]">Accuracy</div>
             </div>
-            <div className="bg-secondary w-fit rounded-xl px-2 py-1.5">
+            <div className="bg-secondary dark:bg-dark-secondary w-fit rounded-xl px-2 py-1.5">
               <div className="text-[2rem] font-semibold">Some high number</div>
               <div className="-mt-2 text-[1.25rem]">Number of Weights</div>
             </div>
-            <div className="bg-secondary w-fit rounded-xl px-2 py-1.5">
+            <div className="bg-secondary dark:bg-dark-secondary w-fit rounded-xl px-2 py-1.5">
               <div className="text-[2rem] font-semibold">550</div>
               <div className="-mt-2 text-[1.25rem]">Images in Dataset</div>
             </div>
@@ -143,11 +142,16 @@ export default function Home() {
           </h2>
           <div className="mx-auto mt-8 h-[500px] w-full max-w-[800px]">
             <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
-              <ambientLight intensity={5}/>
+              <ambientLight intensity={5} />
               <directionalLight position={[5, 5, 10]} intensity={10} />
-              <OrbitControls makeDefault target={[0, 0, 0]}  minDistance={1} maxDistance={10}/>
+              <OrbitControls
+                makeDefault
+                target={[0, 0, 0]}
+                minDistance={1}
+                maxDistance={10}
+              />
               <mesh>
-                <HardwareModel/>
+                <HardwareModel />
               </mesh>
             </Canvas>
           </div>
@@ -155,5 +159,5 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  ); 
+  );
 }
