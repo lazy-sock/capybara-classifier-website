@@ -10,6 +10,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import NetworkVisualization from "~/components/NetworkVisualization";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -186,10 +187,14 @@ export default function HowItWorks() {
           fill="#204116"
         />
       </svg>
-      <main className="mx-auto w-full max-w-[1100px] pt-30">
-        <h2 className="text-[2rem] font-bold">Training</h2>
-        <h2 className="text-[2rem] font-bold">Accuracy</h2>
-      </main>
+      <section className="mx-auto mt-12 w-full max-w-[1100px]">
+        <h2 className="mb-[10px] text-[3rem] font-bold">Visualization</h2>
+        <p className="mb-[100px] text-[1.25rem]">
+          Here you can find a visualization of the dataset. It features the most
+          essential operations of the CNN.
+        </p>
+        <NetworkVisualization />
+      </section>
       <Footer />
     </div>
   );

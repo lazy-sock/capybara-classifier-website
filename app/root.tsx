@@ -38,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           sizes="any"
         ></link>
       </head>
-      <body className="font-winky">
+      <body className="font-winky text-white">
         {children}
         <ScrollRestoration />
         <Scripts />
