@@ -132,6 +132,15 @@ export default function HowItWorks() {
             </div>
           </div>
         </div>
+        <p className="mt-12 text-[1.25rem]">
+          The Network is a CNN with a resnet50 backbone and two attention
+          modules. The attention modules help identify important features in the
+          image. The input images are 224x224, which is pretty high for an AI.
+          The resulting accuracy is 90%. The network also has the option to
+          output that the image contains a bird of another species which isn't
+          part of the database's classes. Additionally it can also decide how
+          confident it is with it's prediction.
+        </p>
       </main>
       <svg
         className="h-[100px] w-full"
