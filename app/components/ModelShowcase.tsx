@@ -44,9 +44,10 @@ const ImageClassifier: React.FC = () => {
 
     // Convert RGBA to RGB and normalize
     for (let i = 0; i < 224 * 224; i++) {
-      input[i] = imageData.data[i * 4] / 255; // R
-      input[224 * 224 + i] = imageData.data[i * 4 + 1] / 255; // G
-      input[2 * 224 * 224 + i] = imageData.data[i * 4 + 2] / 255; // B
+      input[i] = (imageData.data[i * 4] / 255 - 0.485) / 0.229; // R
+      input[224 * 224 + i] = (imageData.data[i * 4 + 1] / 255 - 0.456) / 0.224; // G
+      input[2 * 224 * 224 + i] =
+        (imageData.data[i * 4 + 2] / 255 - 0.406) / 0.225; // B
     }
 
     // Run inference
