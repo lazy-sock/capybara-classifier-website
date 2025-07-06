@@ -79,7 +79,7 @@ export default function NavBar() {
               </svg>
               <p className="dark:text-dark-primary text-black">Code</p>
             </Link>,
-            <button className="flex gap-4">
+            <button className="flex cursor-pointer gap-[8px]">
               <svg
                 viewBox="0 0 512 512"
                 xmlns="http://www.w3.org/2000/svg"
