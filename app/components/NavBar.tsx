@@ -1,7 +1,39 @@
 import { Link } from "react-router";
 import Dropdown from "./Dropdown";
+import { useState, useEffect } from "react";
 
 export default function NavBar() {
+  const [isDark, setIsDark] = useState(true);
+
+  // Initialize theme on component mount
+  useEffect(() => {
+    // Check if user has a saved preference
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      setIsDark(savedTheme === "dark");
+    } else {
+      // If no saved preference, check system preference
+      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }, []);
+
+  // Apply theme changes to document
+  useEffect(() => {
+    const root = document.documentElement;
+
+    if (isDark) {
+      document.documentElement.classList.toggle("dark", isDark);
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.toggle("dark", isDark);
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  };
   return (
     <nav className="dark:bg-dark-primary fixed top-0 left-0 z-10 flex h-25 w-screen items-center gap-8 bg-white text-xl lg:h-30 lg:px-5">
       <Link
@@ -79,7 +111,10 @@ export default function NavBar() {
               </svg>
               <p className="dark:text-dark-primary text-black">Code</p>
             </Link>,
-            <button className="flex cursor-pointer gap-[8px]">
+            <button
+              onClick={toggleTheme}
+              className="flex cursor-pointer gap-[8px]"
+            >
               <svg
                 viewBox="0 0 512 512"
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +128,7 @@ export default function NavBar() {
                   y2="96"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -106,7 +141,7 @@ export default function NavBar() {
                   y2="464"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -119,7 +154,7 @@ export default function NavBar() {
                   y2="142.86"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -132,7 +167,7 @@ export default function NavBar() {
                   y2="403.08"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -145,7 +180,7 @@ export default function NavBar() {
                   y2="256"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -158,7 +193,7 @@ export default function NavBar() {
                   y2="256"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -171,7 +206,7 @@ export default function NavBar() {
                   y2="369.14"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -184,7 +219,7 @@ export default function NavBar() {
                   y2="108.92"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -196,7 +231,7 @@ export default function NavBar() {
                   r="80"
                   style={{
                     fill: "none",
-                    stroke: "#000000",
+                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -242,6 +277,126 @@ export default function NavBar() {
           </svg>
           <p className="dark:text-dark-white text-black">Code</p>
         </Link>
+        <button
+          onClick={toggleTheme}
+          className="flex cursor-pointer gap-[8px] stroke-black text-black dark:stroke-white dark:text-white"
+        >
+          <svg
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+            width={35}
+          >
+            <title>ionicons-v5-q</title>
+            <line
+              x1="256"
+              y1="48"
+              x2="256"
+              y2="96"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+            <line
+              x1="256"
+              y1="416"
+              x2="256"
+              y2="464"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+            <line
+              x1="403.08"
+              y1="108.92"
+              x2="369.14"
+              y2="142.86"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+            <line
+              x1="142.86"
+              y1="369.14"
+              x2="108.92"
+              y2="403.08"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+            <line
+              x1="464"
+              y1="256"
+              x2="416"
+              y2="256"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+            <line
+              x1="96"
+              y1="256"
+              x2="48"
+              y2="256"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+            <line
+              x1="403.08"
+              y1="403.08"
+              x2="369.14"
+              y2="369.14"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+            <line
+              x1="142.86"
+              y1="142.86"
+              x2="108.92"
+              y2="108.92"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+            <circle
+              cx="256"
+              cy="256"
+              r="80"
+              style={{
+                fill: "none",
+                strokeLinecap: "round",
+                strokeMiterlimit: 10,
+                strokeWidth: "55px",
+              }}
+            />
+          </svg>
+          <p className="">Dark</p>
+        </button>
       </div>
     </nav>
   );
