@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import Dropdown from "./Dropdown";
-import LanguageSwitch from "./LanguageSwitch";
 
 export default function NavBar() {
   return (
@@ -243,7 +242,6 @@ export default function NavBar() {
           </svg>
           <p className="dark:text-dark-white text-black">Code</p>
         </Link>
-        <LanguageSwitch />
       </div>
     </nav>
   );
