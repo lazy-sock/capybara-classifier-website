@@ -113,7 +113,7 @@ export default function NavBar() {
             </Link>,
             <button
               onClick={toggleTheme}
-              className="flex cursor-pointer gap-[8px]"
+              className="flex cursor-pointer gap-[8px] stroke-black"
             >
               <svg
                 viewBox="0 0 512 512"
@@ -128,7 +128,6 @@ export default function NavBar() {
                   y2="96"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -141,7 +140,6 @@ export default function NavBar() {
                   y2="464"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -154,7 +152,6 @@ export default function NavBar() {
                   y2="142.86"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -167,7 +164,6 @@ export default function NavBar() {
                   y2="403.08"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -180,7 +176,6 @@ export default function NavBar() {
                   y2="256"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -193,7 +188,6 @@ export default function NavBar() {
                   y2="256"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -206,7 +200,6 @@ export default function NavBar() {
                   y2="369.14"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -219,7 +212,6 @@ export default function NavBar() {
                   y2="108.92"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
@@ -231,7 +223,6 @@ export default function NavBar() {
                   r="80"
                   style={{
                     fill: "none",
-                    stroke: "#FFFFFF",
                     strokeLinecap: "round",
                     strokeMiterlimit: 10,
                     strokeWidth: "55px",
