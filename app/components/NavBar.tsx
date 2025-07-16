@@ -3,33 +3,29 @@ import Dropdown from "./Dropdown";
 import { useState, useEffect } from "react";
 
 export default function NavBar() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
+  const [hasLoadedTheme, setHasLoadedTheme] = useState(false);
 
-  // Initialize theme on component mount
+  // Load theme preference on mount
   useEffect(() => {
-    // Check if user has a saved preference
     const savedTheme = localStorage.getItem("theme");
 
     if (savedTheme) {
       setIsDark(savedTheme === "dark");
     } else {
-      // If no saved preference, check system preference
       setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
     }
+
+    setHasLoadedTheme(true);
   }, []);
 
-  // Apply theme changes to document
+  // Only apply theme after it has loaded
   useEffect(() => {
-    const root = document.documentElement;
+    if (!hasLoadedTheme) return;
 
-    if (isDark) {
-      document.documentElement.classList.toggle("dark", isDark);
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.toggle("dark", isDark);
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDark]);
+    document.documentElement.classList.toggle("dark", isDark);
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  }, [isDark, hasLoadedTheme]);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
