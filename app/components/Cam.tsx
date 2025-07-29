@@ -26,7 +26,7 @@ export default function Cam() {
       <div className="camera-stream-container flex flex-col items-center justify-center p-4">
         {/* Placeholder or error */}
         {!streamReady && (
-          <div className="bg-secondary flex aspect-video w-full max-w-md items-center justify-center rounded-lg text-white shadow-inner">
+          <div className="bg-primary flex aspect-video w-full max-w-md items-center justify-center rounded-lg text-white shadow-inner">
             {error ? (
               <div className="px-4 text-center">{error}</div>
             ) : (

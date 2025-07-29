@@ -31,16 +31,13 @@ export default function AIBlobs() {
 
           {/* Image container with the mask applied */}
           <div
-            className="h-[450px] w-[450px] bg-cover bg-center"
+            className="h-[450px] w-[450px] bg-cover bg-center transition-all hover:saturate-200"
             style={{
               backgroundImage: 'url("/blobs/image1.jpg")',
               clipPath: "url(#blobMask)",
             }}
           >
-            <Link
-              to={"/ai#dataset"}
-              className="block h-full w-full hover:cursor-pointer"
-            ></Link>
+            <Link to={"/ai#dataset"} className="block h-full w-full"></Link>
           </div>
           <h3 className="-mt-[30px] text-center text-[2rem]">Dataset</h3>
         </div>
@@ -62,7 +59,7 @@ export default function AIBlobs() {
 
           {/* Image container with the mask applied */}
           <div
-            className="h-[450px] w-[450px] bg-cover bg-center"
+            className="h-[450px] w-[450px] bg-cover bg-center transition-all hover:saturate-200"
             style={{
               backgroundImage: 'url("/blobs/image2.webp")',
               clipPath: "url(#blobMask)",
@@ -93,7 +90,7 @@ export default function AIBlobs() {
 
           {/* Image container with the mask applied */}
           <div
-            className="h-[450px] w-[450px] bg-cover bg-center"
+            className="h-[450px] w-[450px] bg-cover bg-center transition-all hover:saturate-200"
             style={{
               backgroundImage: 'url("/blobs/image3.jpg")',
               clipPath: "url(#blobMask)",

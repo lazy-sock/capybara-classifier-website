@@ -94,19 +94,19 @@ export default function Home() {
           </div>
           <h3 className="mt-12 mb-2 text-center text-[2.5rem]">Statistics</h3>
           <div className="max-w- mx-auto mb-12 flex w-full max-w-[800px] flex-wrap items-center justify-center gap-6 max-lg:flex-col">
-            <div className="bg-secondary dark:bg-dark-secondary w-fit rounded-xl px-2 py-1.5">
+            <div className="w-fit rounded-xl border-4 px-2 py-1.5">
               <div className="text-[2rem] font-semibold">11</div>
               <div className="-mt-2 text-[1.25rem]">Number of Classes</div>
             </div>
-            <div className="bg-secondary dark:bg-dark-secondary w-fit rounded-xl px-2 py-1.5">
+            <div className="w-fit rounded-xl border-4 px-2 py-1.5">
               <div className="text-[2rem] font-semibold">90%</div>
               <div className="-mt-2 text-[1.25rem]">Accuracy</div>
             </div>
-            <div className="bg-secondary dark:bg-dark-secondary w-fit rounded-xl px-2 py-1.5">
+            <div className="w-fit rounded-xl border-4 px-2 py-1.5">
               <div className="text-[2rem] font-semibold">Some high number</div>
               <div className="-mt-2 text-[1.25rem]">Number of Weights</div>
             </div>
-            <div className="bg-secondary dark:bg-dark-secondary w-fit rounded-xl px-2 py-1.5">
+            <div className="w-fit rounded-xl border-4 px-2 py-1.5">
               <div className="text-[2rem] font-semibold">550</div>
               <div className="-mt-2 text-[1.25rem]">Images in Dataset</div>
             </div>
