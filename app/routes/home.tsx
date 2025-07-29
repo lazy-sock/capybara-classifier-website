@@ -46,13 +46,13 @@ export default function Home() {
               <div className="flex gap-4">
                 <Link
                   to="get_started"
-                  className="bg-primary border-primary w-fit rounded-lg border-4 px-2 py-1 text-[1.4rem] font-semibold text-white hover:cursor-pointer lg:text-[1.7rem]"
+                  className="bg-primary border-primary w-fit rounded-lg border-4 px-2 py-1 text-[1.4rem] font-semibold text-white outline-white transition-all hover:cursor-pointer hover:outline-3 lg:text-[1.7rem]"
                 >
                   Get Started
                 </Link>
                 <Link
                   to="app"
-                  className="text-primary dark:text-dark-white dark:bg-dark-primary w-fit rounded-lg border-4 bg-white px-2 py-1 text-[1.4rem] font-semibold hover:cursor-pointer lg:text-[1.7rem]"
+                  className="text-primary dark:text-dark-white hover:bg-primary dark:bg-dark-primary w-fit rounded-lg border-3 bg-white px-2 py-1 text-[1.4rem] font-semibold transition-all hover:cursor-pointer hover:text-white lg:text-[1.7rem]"
                 >
                   Go to App
                 </Link>
