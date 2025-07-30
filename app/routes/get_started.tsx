@@ -31,7 +31,7 @@ export default function HowItWorks() {
             Registrieren
           </Link>
           <Link
-            to="/registrieren"
+            to="/anmelden"
             className="bg-primary rounded px-2 py-1 text-[1.25rem] outline-white hover:outline-2"
           >
             Anmelden
