@@ -1,5 +1,8 @@
 import type { Route } from "./+types/home";
 import { BottomNav } from "../components/BottomNav";
+import { useState, useEffect } from "react";
+
+import { useUserSettings } from "~/hooks/useUserSettings";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,11 +12,31 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Settings() {
+  const { setting, updateSetting, loading } = useUserSettings();
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    setInputValue(setting);
+  }, [setting]);
+
+  const handleSave = () => {
+    updateSetting(inputValue);
+  };
+
+  if (loading) return <div>Loading settings...</div>;
+
   return (
     <div>
       <main className="mx-auto w-full max-w-[1000px] pt-16">
         <h1 className="text-center text-[3rem] font-bold">Settings</h1>
-        <div className="flex justify-center"></div>
+        <div className="flex justify-center">
+          <input
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Enter your setting"
+          />
+          <button onClick={handleSave}>Save Settings</button>
+        </div>
         <BottomNav selected={1} />
       </main>
     </div>
