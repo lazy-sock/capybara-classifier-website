@@ -19,9 +19,7 @@ export default function HowItWorks() {
           Getting Started
         </h1>
         <p className="mb-8 text-center text-[1.2rem]">
-          Um auf die App zuzugreifen musst du dich erstmal registrieren. Dabei
-          ist die IP des ESP-32 wichtig, damit unser Server dort die Daten
-          anfragen kann.
+          Um auf die App zuzugreifen musst du dich erstmal registrieren.
         </p>
         <div className="mb-8 flex items-center justify-center gap-8">
           <Link
@@ -37,11 +35,6 @@ export default function HowItWorks() {
             Anmelden
           </Link>
         </div>
-        <p className="mb-8 text-center text-[1.2rem]">
-          Um auf die App zuzugreifen musst du dich erstmal registrieren. Dabei
-          Damit du die App nutzen kannst, musst du auch in den Einstellungen die
-          IP und eventuell den Port deiner Kamera eingeben.
-        </p>
       </main>
     </div>
   );
