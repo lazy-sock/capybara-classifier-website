@@ -16,6 +16,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Registrieren() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <div>
       <NavBar />
@@ -27,23 +28,26 @@ export default function Registrieren() {
             <input
               type="text"
               onChange={(e) => setEmail(e.target.value)}
-              className="w-[300px] rounded border-2 px-1 text-[1.25rem] outline-black focus:border-2 dark:outline-white"
+              placeholder="E-Mail"
+              className="w-[300px] rounded border-2 px-1.5 py-1 text-[1.25rem] outline-black focus:border-2 dark:outline-white"
             />
           </div>
-          <div className="flex flex-col">
-            <label htmlFor="password">Password</label>
+          <div className="relative flex flex-col">
+            <label htmlFor="password">Passwort</label>
             <input
-              type="text"
+              type={showPassword ? "text" : "password"}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-[300px] rounded border-2 px-1 text-[1.25rem] outline-black focus:border-2 dark:outline-white"
+              placeholder={"Passwort"}
+              required={true}
+              className={`w-[300px] rounded border-2 px-1.5 py-1 pr-12 text-[1.25rem] outline-black focus:border-transparent dark:outline-white`}
             />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="ip">ESP-32 IP</label>
-            <input
-              type="text"
-              className="w-[300px] rounded border-2 px-1 text-[1.25rem] outline-black focus:border-2 dark:outline-white"
-            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-0 top-6 right-0 flex cursor-pointer items-center px-3 text-gray-400 hover:text-gray-600 focus:outline-none disabled:cursor-not-allowed"
+            >
+              {showPassword ? <p>hide</p> : <p>show</p>}
+            </button>
           </div>
           <button
             onClick={() => signUp(email, password)}
