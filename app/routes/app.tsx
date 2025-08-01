@@ -7,9 +7,11 @@ import RecentImageCard from "../components/RecentImageCard";
 import { BottomNav } from "~/components/BottomNav";
 import { useEffect, useState } from "react";
 
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import type { User } from "firebase/auth";
+import NavBar from "~/components/NavBar";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -19,7 +21,26 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const getActiveBirds = () => {};
-const getRecentImages = () => {};
+
+const getRecentImages = async () => {
+  try {
+    const q = query(
+      collection(db, "sightings"),
+      orderBy("timestamp", "desc"),
+      limit(4),
+    );
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map((doc, index) => ({
+      id: index + 1, // Convert to number for compatibility
+      imageUrl: doc.data().photoUrl, // Cloudinary URL from Firestore
+      time: doc.data().time,
+      species: doc.data().species,
+    }));
+  } catch (error) {
+    console.error("Error fetching recent images:", error);
+    return [];
+  }
+};
 
 type RecentImage = {
   id: number;
@@ -29,33 +50,41 @@ type RecentImage = {
 };
 
 export default function App() {
-  const recentImages: RecentImage[] = [
-    { id: 1, time: "15:02", species: "Blue Tit" },
-    { id: 2, time: "14:58", species: "Great Tit" },
-    { id: 3, time: "14:49", species: "Sparrow" },
-    { id: 4, time: "14:33", species: "Robin" },
-  ];
+  const [recentImages, setRecentImages] = useState<RecentImage[]>([]);
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [imagesLoading, setImagesLoading] = useState(false);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
 
-    // Cleanup subscription on unmount
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      setImagesLoading(true);
+      getRecentImages()
+        .then(setRecentImages)
+        .finally(() => setImagesLoading(false));
+    }
+  }, [user]);
+
   if (loading)
     return (
       <div className="flex h-screen items-center justify-center">
         <p>Loading...</p>
       </div>
     );
+
   if (user)
     return (
       <div>
-        <main className="mx-auto mt-12 max-w-[1000px] p-2">
+        <NavBar />
+        <main className="mx-auto mt-12 max-w-[1000px] p-2 text-black dark:text-white">
           <h1 className="text-center text-[2rem] font-semibold lg:text-[2.5rem]">
             Live Camera
           </h1>
@@ -66,11 +95,17 @@ export default function App() {
             <h2 className="text-center text-[2rem] font-semibold">
               Recent Sightings
             </h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              {recentImages.map((img) => (
-                <RecentImageCard key={img.id} image={img} />
-              ))}
-            </div>
+            {imagesLoading ? (
+              <div className="flex justify-center">
+                <p>Loading recent sightings...</p>
+              </div>
+            ) : (
+              <div className="flex flex-wrap justify-center gap-4">
+                {recentImages.map((img) => (
+                  <RecentImageCard key={img.id} image={img} />
+                ))}
+              </div>
+            )}
           </section>
         </main>
         <Footer />
