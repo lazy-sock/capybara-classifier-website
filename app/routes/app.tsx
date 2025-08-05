@@ -120,6 +120,12 @@ export default function App() {
           Please log in to access the live camera and recent sightings.
         </p>
         <Link
+          to="/registrieren"
+          className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem] text-white"
+        >
+          Registrieren
+        </Link>
+        <Link
           to="/anmelden"
           className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem] text-white"
         >
