@@ -14,7 +14,7 @@ export default function HowItWorks() {
   return (
     <div>
       <NavBar />
-      <main className="mx-auto mt-35 max-w-[800px] px-4 text-white">
+      <main className="mx-auto mt-35 max-w-[800px] px-4 text-black dark:text-white">
         <h1 className="mb-4 text-center text-[3rem] font-bold">
           Getting Started
         </h1>
@@ -24,13 +24,13 @@ export default function HowItWorks() {
         <div className="mb-8 flex items-center justify-center gap-8">
           <Link
             to="/registrieren"
-            className="bg-primary rounded px-2 py-1 text-[1.25rem] outline-white hover:outline-2"
+            className="bg-primary rounded px-2 py-1 text-[1.25rem] text-white outline-white hover:outline-2"
           >
             Registrieren
           </Link>
           <Link
             to="/anmelden"
-            className="bg-primary rounded px-2 py-1 text-[1.25rem] outline-white hover:outline-2"
+            className="bg-primary rounded px-2 py-1 text-[1.25rem] text-white outline-white hover:outline-2"
           >
             Anmelden
           </Link>

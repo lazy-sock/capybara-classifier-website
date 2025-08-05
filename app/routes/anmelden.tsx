@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { Link } from "react-router";
+import { redirect } from "react-router";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { signIn } from "~/auth";
@@ -49,8 +49,11 @@ export default function Anmelden() {
             </button>
           </div>
           <button
-            onClick={() => signIn(email, password)}
-            className="bg-primary text-white cursor-pointer rounded px-2 py-1 text-[1.25rem]"
+            onClick={() => {
+              signIn(email, password);
+              redirect("/app");
+            }}
+            className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem] text-white"
           >
             Anmelden
           </button>

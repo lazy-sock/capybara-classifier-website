@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { Link } from "react-router";
+import { redirect } from "react-router";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { useState } from "react";
@@ -50,7 +50,10 @@ export default function Registrieren() {
             </button>
           </div>
           <button
-            onClick={() => signUp(email, password)}
+            onClick={() => {
+              signUp(email, password);
+              redirect("/app");
+            }}
             className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem] text-white"
           >
             Registrieren
