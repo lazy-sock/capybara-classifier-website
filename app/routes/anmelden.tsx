@@ -50,7 +50,7 @@ export default function Anmelden() {
           </div>
           <button
             onClick={() => signIn(email, password)}
-            className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem]"
+            className="bg-primary text-white cursor-pointer rounded px-2 py-1 text-[1.25rem]"
           >
             Anmelden
           </button>

@@ -14,7 +14,7 @@ export default function HowItWorks() {
   return (
     <div>
       <NavBar />
-      <main className="mx-auto mt-35 max-w-[800px] px-4 text-black dark:text-white">
+      <main className="mx-auto mt-35 max-w-[800px] px-4 text-white">
         <h1 className="mb-4 text-center text-[3rem] font-bold">
           Getting Started
         </h1>

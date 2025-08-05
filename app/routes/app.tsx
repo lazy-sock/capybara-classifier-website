@@ -121,7 +121,7 @@ export default function App() {
         </p>
         <Link
           to="/anmelden"
-          className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem]"
+          className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem] text-white"
         >
           Anmelden
         </Link>

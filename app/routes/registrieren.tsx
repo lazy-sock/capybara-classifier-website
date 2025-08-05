@@ -51,7 +51,7 @@ export default function Registrieren() {
           </div>
           <button
             onClick={() => signUp(email, password)}
-            className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem]"
+            className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem] text-white"
           >
             Registrieren
           </button>
