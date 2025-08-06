@@ -84,11 +84,11 @@ export default function App() {
     return (
       <div>
         <NavBar />
-        <main className="mx-auto mt-12 max-w-[1000px] p-2 text-black dark:text-white">
-          <h1 className="text-center text-[2rem] font-semibold lg:text-[2.5rem]">
+        <main className="mx-auto mt-25 max-w-[1000px] p-2 text-black dark:text-white">
+          {/* <h1 className="text-center text-[2rem] font-semibold lg:text-[2.5rem]">
             Live Camera
-          </h1>
-          <Cam />
+          </h1> */}
+          {/* <Cam /> */}
           {/* <BirdhouseDashboard /> */}
 
           <section className="space-y-4">
@@ -98,6 +98,10 @@ export default function App() {
             {imagesLoading ? (
               <div className="flex justify-center">
                 <p>Loading recent sightings...</p>
+              </div>
+            ) : recentImages.length === 0 ? (
+              <div className="flex justify-center">
+                <img width={400} src="illustrations/no_photos.svg" alt="" />
               </div>
             ) : (
               <div className="flex flex-wrap justify-center gap-4">
