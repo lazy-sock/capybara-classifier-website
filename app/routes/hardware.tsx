@@ -6,7 +6,7 @@ import NavBar from "~/components/NavBar";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Capybara" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "Hardware used for Capybara." },
   ];
 }
 
@@ -29,7 +29,9 @@ export default function Hardware() {
           <h2 className="text-center text-[2.25rem] font-semibold">
             Motion Sensor
           </h2>
-          <p className="text-center text-[1.25rem]">Simple PIR motion sensor.</p>
+          <p className="text-center text-[1.25rem]">
+            Simple PIR motion sensor.
+          </p>
         </section>
         <section id="battery">
           <h2 className="text-center text-[2.25rem] font-semibold">Battery</h2>

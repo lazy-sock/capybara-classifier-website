@@ -6,7 +6,10 @@ import NavBar from "~/components/NavBar";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Capybara" },
-    { name: "description", content: "Welcome to React Router!" },
+    {
+      name: "description",
+      content: "Guide for getting started with Capybara.",
+    },
   ];
 }
 

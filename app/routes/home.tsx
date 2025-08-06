@@ -13,7 +13,7 @@ import { Suspense } from "react";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Capybara protects your Birdhouse" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "Welcome to Capybara!" },
   ];
 }
 function HardwareModel() {

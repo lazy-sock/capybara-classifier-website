@@ -6,7 +6,7 @@ import { BottomNav } from "~/components/BottomNav";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Capybara" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "Capybara-WIKI für Vögel" },
   ];
 }
 

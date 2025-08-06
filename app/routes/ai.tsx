@@ -15,7 +15,7 @@ import NetworkVisualization from "~/components/NetworkVisualization";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Capybara" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "AI von Capybara erklärt" },
   ];
 }
 

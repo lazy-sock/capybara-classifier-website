@@ -9,7 +9,7 @@ import { signUp } from "~/auth";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Capybara" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "Registrieren bei Capybara" },
   ];
 }
 
