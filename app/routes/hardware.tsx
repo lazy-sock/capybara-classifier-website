@@ -14,24 +14,37 @@ export default function Hardware() {
   return (
     <div>
       <NavBar />
-      <main className="mx-auto mt-35 max-w-[800px] px-4 text-black dark:text-white">
+      <main className="mx-auto mt-35 max-w-[1600px] px-4 text-black dark:text-white">
         <h1 className="mb-4 text-center text-[3rem] font-bold">Hardware</h1>
-        <section id="esp32-cam">
-          <h2 className="text-center text-[2.25rem] font-semibold">
-            ESP32-CAM
-          </h2>
-          <p className="text-center text-[1.25rem]">
-            The ESP32-CAM is the main microcontroller. It is a simple camera
-            with enough computational power and features.
-          </p>
+        <section id="esp32-cam" className="bg-[#2d2d2d] rounded-2xl p-5 mt-15 flex flex-row justify-around text-black">
+          <div className="flex flex-col justify-around">
+            <img src="/images/ESP32.jpg" alt="ESP32" className="rounded-2xl" width="500px"/>
+          </div>
+          <div className="flex flex-col justify-between">
+            <h2 className="text-center text-[2.25rem] font-semibold text-white">
+              ESP32 Cam Module
+            </h2>
+            <div className="bg-white rounded-2xl p-3 ml-3 min-h-[27vh]">
+              <p className="text-center text-[1.25rem]">
+                Die Hauptkomponente mit einer Kamera ausgestattet und genügend Rechenleistung.
+              </p>
+            </div>
+          </div>
         </section>
-        <section id="motion-sensor">
-          <h2 className="text-center text-[2.25rem] font-semibold">
-            Motion Sensor
-          </h2>
-          <p className="text-center text-[1.25rem]">
-            Simple PIR motion sensor.
-          </p>
+        <section id="esp32-cam" className="bg-[#2d2d2d] rounded-2xl p-5 mt-15 flex flex-row justify-around text-black">
+          <div className="flex flex-col justify-around">
+            <img src="/images/PIR.jpg" alt="ESP32" className="rounded-2xl" width="500px"/>
+          </div>
+          <div className="flex flex-col justify-between">
+            <h2 className="text-center text-[2.25rem] font-semibold text-white">
+               Motion Sensor
+            </h2>
+            <div className="bg-white rounded-2xl p-3 ml-3 min-h-[27vh]">
+              <p className="text-center text-[1.25rem]">
+                Ein einfacher Bewegungssensor.
+              </p>
+            </div>
+          </div>
         </section>
         <section id="battery">
           <h2 className="text-center text-[2.25rem] font-semibold">Battery</h2>
