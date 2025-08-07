@@ -9,6 +9,7 @@ export default function Footer() {
           <Link to="/">Home</Link>
           <Link to="/ai">Artificial Intelligence</Link>
           <Link to="/hardware">Hardware</Link>
+          <Link to="/code">Code</Link>
         </div>
         <div className="flex flex-col">
           <h3 className="text-2xl">App</h3>
