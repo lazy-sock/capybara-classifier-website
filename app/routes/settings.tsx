@@ -30,7 +30,7 @@ export default function Settings() {
   return (
     <div className="flex flex-col flex-grow">
       <NavBar />
-      <main className="mx-auto w-full max-w-[1000px] pt-16">
+      <main className="mx-auto w-full max-w-[1000px] pt-28">
         <h1 className="text-center text-[3rem] font-bold">Settings</h1>
         <div className="flex justify-center">
           <input
