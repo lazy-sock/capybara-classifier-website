@@ -29,7 +29,7 @@ export default function Anmelden() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col flex-grow">
       <NavBar />
       <main className="mx-auto w-full max-w-[1100px] pt-30 pb-30 text-black dark:text-white">
         <h1 className="text-center text-[3rem] font-bold">Anmelden</h1>

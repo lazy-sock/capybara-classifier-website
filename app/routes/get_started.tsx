@@ -15,7 +15,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function HowItWorks() {
   return (
-    <div>
+    <div className="flex flex-col flex-grow">
       <NavBar />
       <main className="mx-auto mt-35 max-w-[800px] px-4 text-black dark:text-white">
         <h1 className="mb-4 text-center text-[3rem] font-bold">
@@ -39,6 +39,7 @@ export default function HowItWorks() {
           </Link>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

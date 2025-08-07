@@ -12,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Wiki() {
   return (
-    <div>
+    <div className="">
       <main className="mx-auto w-full max-w-[1000px] pt-16">
         <h1 className="text-center text-[3rem] font-bold">Wiki for Birds</h1>
         <div className="flex justify-center">

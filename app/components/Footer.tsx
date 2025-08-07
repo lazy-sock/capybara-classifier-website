@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export default function Footer() {
   return (
-    <div className="dark:bg-dark-black wt-auto-felx flex w-full flex-col bg-black p-8 text-white">
+    <div className="dark:bg-dark-black mt-auto wt-auto-felx flex w-full flex-col bg-black p-8 text-white">
       <div className="flex flex-wrap justify-center gap-30 pb-4">
         <div className="flex flex-col">
           <h3 className="text-2xl">Showcase</h3>

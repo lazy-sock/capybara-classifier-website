@@ -82,7 +82,7 @@ export default function App() {
 
   if (user)
     return (
-      <div>
+      <div className="flex-grow flex flex-col">
         <NavBar />
         <main className="mx-auto mt-25 max-w-[1000px] p-2 text-black dark:text-white">
           {/* <h1 className="text-center text-[2rem] font-semibold lg:text-[2.5rem]">
@@ -120,7 +120,7 @@ export default function App() {
     return (
   <>
       <NavBar />
-      <div className="flex h-screen flex-col items-center justify-center text-black dark:text-white">
+      <main className="flex h-screen flex-grow flex-col items-center justify-center text-black dark:text-white">
         <h1 className="mb-4 text-3xl font-bold">Willkommen zu Capybara!</h1>
         <p className="mb-6 text-[1.25rem]">
           Bitte registriere dich oder melde dich an um die App zu verwenden. <br></br>Falls du bei der Einrichtung hilfe brauchst, schaue <a href="/get_started" className="text-blue-400">hier</a> nach.
@@ -139,7 +139,7 @@ export default function App() {
           Anmelden
         </Link>
         </div>
-      </div>
+      </main>
       </>
     );
 }
