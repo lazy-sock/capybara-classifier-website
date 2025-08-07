@@ -37,7 +37,7 @@ export default function Home() {
               <h1 className="mb-4 text-[2.5rem] font-bold lg:mb-8 lg:text-6xl">
                 Camera Birdhouse
               </h1>
-              <p className="mb-6 text-[1.15rem] lg:text-[1.5rem]">
+              <p className="mb-6 text-[1.15rem] lg:text-[1.5rem] font-roboto">
                 Capybara is a smart birdhouse that uses AI to monitor and
                 protect your birds. It provides real-time insights into bird
                 activity, feeding schedules, and more. With its advanced camera
