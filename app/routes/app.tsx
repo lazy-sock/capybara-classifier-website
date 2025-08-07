@@ -118,11 +118,14 @@ export default function App() {
     );
   else
     return (
-      <div className="flex h-screen flex-col items-center justify-center">
-        <h1 className="mb-4 text-3xl font-bold">Welcome to Capybara!</h1>
-        <p className="mb-6">
-          Please log in to access the live camera and recent sightings.
+  <>
+      <NavBar />
+      <div className="flex h-screen flex-col items-center justify-center text-black dark:text-white">
+        <h1 className="mb-4 text-3xl font-bold">Willkommen zu Capybara!</h1>
+        <p className="mb-6 text-[1.25rem]">
+          Bitte registriere dich oder melde dich an um die App zu verwenden. <br></br>Falls du bei der Einrichtung hilfe brauchst, schaue <a href="/get_started" className="text-blue-400">hier</a> nach.
         </p>
+        <div className="flex gap-6">
         <Link
           to="/registrieren"
           className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem] text-white"
@@ -135,6 +138,8 @@ export default function App() {
         >
           Anmelden
         </Link>
+        </div>
       </div>
+      </>
     );
 }

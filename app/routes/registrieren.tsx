@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { redirect } from "react-router";
+import { useNavigate } from "react-router";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { useState } from "react";
@@ -17,6 +17,18 @@ export default function Registrieren() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+    const [status, setStatus] = useState("")
+  let navigate = useNavigate()
+
+  const anmelden = () => {
+    if(email === "" || password == ""){
+      setStatus("E-Mail und Passwort müssen ausgefüllt sein.")
+    } else {
+      signUp(email, password).catch(() => {setStatus("Anmeldung nicht erfolgreich. Gehe sicher, dass deine Daten richtig sind.")});
+      navigate("/app")
+    }
+  }
+
   return (
     <div>
       <NavBar />
@@ -50,14 +62,13 @@ export default function Registrieren() {
             </button>
           </div>
           <button
-            onClick={() => {
-              signUp(email, password);
-              redirect("/app");
-            }}
+            onClick={anmelden}
             className="bg-primary cursor-pointer rounded px-2 py-1 text-[1.25rem] text-white"
           >
             Registrieren
           </button>
+          <div className="text-red-400">{status}</div>
+
         </div>
       </main>
       <Footer />
