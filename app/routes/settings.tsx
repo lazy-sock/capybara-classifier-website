@@ -3,6 +3,8 @@ import { BottomNav } from "../components/BottomNav";
 import { useState, useEffect } from "react";
 
 import { useUserSettings } from "~/hooks/useUserSettings";
+import Footer from "~/components/Footer";
+import NavBar from "~/components/NavBar";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -26,7 +28,8 @@ export default function Settings() {
   if (loading) return <div>Loading settings...</div>;
 
   return (
-    <div>
+    <div className="flex flex-col flex-grow">
+      <NavBar />
       <main className="mx-auto w-full max-w-[1000px] pt-16">
         <h1 className="text-center text-[3rem] font-bold">Settings</h1>
         <div className="flex justify-center">
@@ -39,6 +42,7 @@ export default function Settings() {
         </div>
         <BottomNav selected={1} />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -119,14 +119,14 @@ export const BottomNav = ({ selected = 0 }) => {
         </div>
 
         {/* Bubble, positioned absolutely on top */}
-        <motion.div
+        <div
           className="bg-secondary absolute z-20 flex h-12 w-12 items-center justify-center rounded-full"
           style={{ left: bubbleLeft - bubbleRadius, top: -28 }}
-          animate={{ left: bubbleLeft - bubbleRadius }}
-          transition={{ type: "spring", stiffness: 300, damping: 25 }}
+          // animate={{ left: bubbleLeft - bubbleRadius }}
+          // transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           {tabs[active].icon}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

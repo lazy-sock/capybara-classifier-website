@@ -225,7 +225,6 @@ export default function NavBar() {
                   }}
                 />
               </svg>
-              <p className="dark:text-dark-primary text-black">Dark</p>
             </button>,
           ]}
         />
@@ -382,7 +381,6 @@ export default function NavBar() {
               }}
             />
           </svg>
-          <p className="">Dark</p>
         </button>
       </div>
     </nav>
