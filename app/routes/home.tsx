@@ -35,26 +35,24 @@ export default function Home() {
           <div className="grid w-fit max-w-[1400px] grid-cols-2 gap-[100px] max-lg:grid-cols-1">
             <div className="flex flex-col justify-center max-lg:w-full max-lg:items-center">
               <h1 className="mb-4 text-[2.5rem] font-bold lg:mb-8 lg:text-6xl">
-                Camera Birdhouse
+                Smart Birdhouse
               </h1>
               <p className="mb-6 text-[1.15rem] lg:text-[1.5rem] font-roboto">
-                Capybara is a smart birdhouse that uses AI to monitor and
-                protect your birds. It provides real-time insights into bird
-                activity, feeding schedules, and more. With its advanced camera
-                system, you can watch your feathered friends live from anywhere.
+                Die CapybaraCam ist ein automatisches Vogelhaus mit integrierter KI-Klassifikation, das dabei hilft, Vögel zu beobachten und ihr Verhalten zu verstehen. 
+                Unser selbst entwickelter CapybaraClassifier erkennt verschiedene Eigenschaften der tierischen Bewohner und liefert nützliche Informationen in Echtzeit.
               </p>
               <div className="flex gap-4">
                 <Link
                   to="get_started"
                   className="bg-primary border-primary w-fit rounded-lg border-4 px-2 py-1 text-[1.4rem] font-semibold text-white outline-white transition-all hover:cursor-pointer hover:outline-3 lg:text-[1.7rem]"
                 >
-                  Get Started
+                  Loslegen
                 </Link>
                 <Link
                   to="app"
                   className="text-primary dark:text-dark-white hover:bg-primary dark:bg-dark-primary w-fit rounded-lg border-3 bg-white px-2 py-1 text-[1.4rem] font-semibold transition-all hover:cursor-pointer hover:text-white lg:text-[1.7rem]"
                 >
-                  Go to App
+                  Zur App
                 </Link>
               </div>
             </div>
@@ -80,35 +78,32 @@ export default function Home() {
           className="bg-primary min-h-[900px] text-white"
         >
           <h2 className="mb-8 text-center text-[2rem] font-semibold lg:text-[3rem]">
-            Artificial Intelligence
+            Unsere Künstliche Intelligenz
           </h2>
           <p className="mx-auto mb-10 max-w-[1000px] p-6 text-center text-[1.25rem]">
-            We created an AI algorithm to classify birds. That's not a
-            particularly new idea. But this task is done quite well. The AI not
-            only classifies birds, but is also able to learn new species by
-            itself. It was trained with images from an image generation model
-            and still recognizes real birds easily.
+            Wir haben ein neuronales Netz entwickelt, das Vögel erkennt und klassifiziert. Das ist an sich keine neue Idee 
+            – aber unsere Umsetzung funktioniert besonders zuverlässig. Mit insgesammt 550 Trainingsbildern kann unser CapybaraClassifier zwischen 10 Vogelarten und dem Eichhörnchen unterscheiden.
           </p>
           <div className="p-6">
             <ModelShowcase />
           </div>
-          <h3 className="mt-12 mb-2 text-center text-[2.5rem]">Statistics</h3>
+          <h3 className="mt-12 mb-2 text-center text-[2.5rem]">Statistiken</h3>
           <div className="max-w- mx-auto mb-12 flex w-full max-w-[800px] flex-wrap items-center justify-center gap-6 max-lg:flex-col">
             <div className="w-fit rounded-xl border-4 px-2 py-1.5">
               <div className="text-[2rem] font-semibold">11</div>
-              <div className="-mt-2 text-[1.25rem]">Number of Classes</div>
+              <div className="-mt-2 text-[1.25rem]">Anzahl an Klassen</div>
             </div>
             <div className="w-fit rounded-xl border-4 px-2 py-1.5">
               <div className="text-[2rem] font-semibold">90%</div>
-              <div className="-mt-2 text-[1.25rem]">Accuracy</div>
+              <div className="-mt-2 text-[1.25rem]">Genauigkeit</div>
             </div>
             <div className="w-fit rounded-xl border-4 px-2 py-1.5">
-              <div className="text-[2rem] font-semibold">Some high number</div>
-              <div className="-mt-2 text-[1.25rem]">Number of Weights</div>
+              <div className="text-[2rem] font-semibold">28.236.893</div>
+              <div className="-mt-2 text-[1.25rem]">Anzahl der Gewichte</div>
             </div>
             <div className="w-fit rounded-xl border-4 px-2 py-1.5">
               <div className="text-[2rem] font-semibold">550</div>
-              <div className="-mt-2 text-[1.25rem]">Images in Dataset</div>
+              <div className="-mt-2 text-[1.25rem]">Bilder im Datensatz</div>
             </div>
           </div>
           <AIBlobs />
@@ -126,13 +121,6 @@ export default function Home() {
             fill="#204116"
           />
         </svg>
-
-        <section id="smart-birdhouse" className="mt-12">
-          <h2 className="text-center text-[2rem] font-bold lg:text-[3rem]">
-            Smart Birdhouse
-          </h2>
-          <p></p>
-        </section>
         <section id="faq" className="mt-12">
           <FAQ />
         </section>

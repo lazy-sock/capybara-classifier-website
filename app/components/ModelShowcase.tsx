@@ -86,7 +86,7 @@ const ImageClassifier: React.FC = () => {
   return (
     <div className="mx-auto w-full max-w-[600px] rounded-xl border-6 p-4 shadow-lg">
       <h2 className="mb-4 text-center text-2xl font-semibold">
-        Bird Image Classifier
+        CapybaraClassifier
       </h2>
       <div className="flex gap-6 max-lg:flex-col">
         <div className="flex h-[400px] w-full items-center justify-center rounded-xl bg-white p-2 text-black dark:text-black">
@@ -106,7 +106,7 @@ const ImageClassifier: React.FC = () => {
                 </svg>
 
                 <p className="mx-auto text-[1.2rem] font-semibold">
-                  Select an Image
+                  Wähle ein Bild aus
                 </p>
               </button>
               <input
@@ -137,7 +137,7 @@ const ImageClassifier: React.FC = () => {
           >
             {result.length > 0
               ? `${classes[result[0]]} (${result[1]})`
-              : "Classify"}
+              : "Klassifizierung"}
           </button>
           <button className="text- flex h-[100px] w-[150px] cursor-pointer items-center justify-center rounded-xl bg-white text-black">
             Attention Map

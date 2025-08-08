@@ -104,13 +104,13 @@ export default function HowItWorks() {
       <NavBar />
       <main className="mx-auto w-full max-w-[1100px] pt-30 pb-30">
         <h1 className="text-center text-[5rem] font-bold">
-          Artificial Intelligence
+          Künstliche Intelligenz
         </h1>
         <div className="bg-secondary dark:bg-dark-secondary mt-6 rounded-4xl p-5">
           <h2 className="text-[2rem] font-bold">Architecture</h2>
           <div className="flex flex-wrap gap-8 font-semibold">
             <div className="dark:border-dark-white flex h-[120px] w-[120px] items-center justify-center rounded-lg border-3 border-black p-2 text-center text-[1.15rem]">
-              Input Image (224×224×3)
+              Input Bild (224×224×3)
             </div>
             <div className="dark:border-dark-white flex h-[120px] w-[120px] items-center justify-center rounded-lg border-3 border-black p-2 text-center text-[1.15rem]">
               ResNet50 Backbone
@@ -128,7 +128,7 @@ export default function HowItWorks() {
               Feature Enhancement Layers
             </div>
             <div className="dark:border-dark-white flex h-[120px] w-[110px] items-center justify-center rounded-lg border-3 border-black p-2 text-center text-[1.15rem]">
-              Classification Head
+              Klassifikations Kopf
             </div>
           </div>
         </div>
@@ -197,10 +197,10 @@ export default function HowItWorks() {
         />
       </svg>
       <section className="mx-auto mt-12 w-full max-w-[1100px]">
-        <h2 className="mb-[10px] text-[3rem] font-bold">Visualization</h2>
+        <h2 className="mb-[10px] text-[3rem] font-bold">Visualisierung</h2>
         <p className="mb-[100px] text-[1.25rem]">
-          Here you can find a visualization of the dataset. It features the most
-          essential operations of the CNN.
+          Hier siehst du die Visualisierung unseres Netzwerkes. Es zeigt vereinfacht alle wichtigen Layer und Operationen eines Convolutional neuronalen Netzwerkes.
+          Ausgehend von den drei Farbkanälen eines Input Bildes "entscheidet" das Netzwerk welche Art das Bild am wahrscheinlichsten abbildet. 
         </p>
         <NetworkVisualization />
       </section>

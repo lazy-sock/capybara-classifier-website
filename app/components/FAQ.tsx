@@ -7,19 +7,19 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "What is BWKI?",
+    question: "Was ist BWKI?",
     answer:
-      "BWKI is a german acronym for 'Besser Wissen, Klüger Investieren', which translates to 'Better Knowledge, Smarter Investing'.",
+      "BWKI steht für 'Bundeswettbewerb Künstliche Intelligenz' und ist ein Wettbewerb, finanziert durch das Bundesministerium für Bildung und Forschung, für Schülerinnen und Schüler bei denen die Teilnehmer eigene KI-Projekte zu gesellschaftlich relevanten Themen entwickeln. ",
   },
   {
-    question: "How do I use the Capybara Classifier?",
+    question: "Wie nutze ich Capybara?",
     answer:
       "To use the Capybara Classifier, simply upload your images and let the AI analyze them. It will classify the images based on the trained model. You can also use it in your own birdhouse yourself. All necessary files and information is either here or on github. But be aware that this is a bit more complex.",
   },
   {
-    question: "Can I contribute to the project?",
+    question: "Wie kann ich bei dem Projekt mitwirken?",
     answer:
-      "If you want to contribute, you can do so by visiting the GitHub repository.",
+      "Wenn du mithelfen möchtest Capybara zu verbessern, oder einfach nur mehr Information über unser Projekt haben möchtest, dann besuche uns auf unserem Github Repository.",
   },
 ];
 

@@ -11,7 +11,7 @@ export default function AIBlobs() {
   ];
   return (
     <>
-      <h3 className="text-center text-[2.5rem]">Want to learn more?</h3>
+      <h3 className="text-center text-[2.5rem]">Neugierig geworden?</h3>
       <div className="flex w-full flex-col justify-center gap-[100px] lg:flex-row">
         <div className="relative">
           {/* Hidden SVG to define the mask */}
@@ -39,7 +39,7 @@ export default function AIBlobs() {
           >
             <Link to={"/ai#dataset"} className="block h-full w-full"></Link>
           </div>
-          <h3 className="-mt-[30px] text-center text-[2rem]">Dataset</h3>
+          <h3 className="-mt-[30px] text-center text-[2rem]">Datensatz</h3>
         </div>
         <div className="relative">
           {/* Hidden SVG to define the mask */}
@@ -70,7 +70,7 @@ export default function AIBlobs() {
               className="block h-full w-full hover:cursor-pointer"
             ></Link>
           </div>
-          <h3 className="-mt-[30px] text-center text-[2rem]">Algorithm</h3>
+          <h3 className="-mt-[30px] text-center text-[2rem]">neuronales Netzwerk</h3>
         </div>
         <div className="relative">
           {/* Hidden SVG to define the mask */}
@@ -101,7 +101,7 @@ export default function AIBlobs() {
               className="block h-full w-full hover:cursor-pointer"
             ></Link>
           </div>
-          <h3 className="-mt-[30px] text-center text-[2rem]">Usage</h3>
+          <h3 className="-mt-[30px] text-center text-[2rem]">Nutzung</h3>
         </div>
       </div>
     </>
