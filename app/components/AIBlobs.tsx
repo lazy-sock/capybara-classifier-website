@@ -70,7 +70,7 @@ export default function AIBlobs() {
               className="block h-full w-full hover:cursor-pointer"
             ></Link>
           </div>
-          <h3 className="-mt-[30px] text-center text-[2rem]">neuronales Netzwerk</h3>
+          <h3 className="-mt-[30px] text-center text-[2rem]">Neuronales Netzwerk</h3>
         </div>
         <div className="relative">
           {/* Hidden SVG to define the mask */}

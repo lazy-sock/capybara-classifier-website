@@ -76,7 +76,7 @@ export default function App() {
   if (loading)
     return (
       <div className="flex h-screen items-center justify-center">
-        <p>Loading...</p>
+        <p>Lädt...</p>
       </div>
     );
 
@@ -93,15 +93,15 @@ export default function App() {
 
           <section className="space-y-4">
             <h2 className="text-center text-[2rem] font-semibold">
-              Recent Sightings
+              Aktuelle Fotos
             </h2>
             {imagesLoading ? (
               <div className="flex justify-center">
-                <p>Loading recent sightings...</p>
+                <p>Photos werden geladen...</p>
               </div>
             ) : recentImages.length === 0 ? (
               <div className="flex items-center flex-col">
-                <h3 className="text-[2rem]">No Photos yet.</h3>
+                <h3 className="text-[2rem]">Keine Photos gefunden.</h3>
                 <img width={400} src="illustrations/no_photos.svg" alt="" />
               </div>
             ) : (
