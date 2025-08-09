@@ -97,11 +97,11 @@ export default function App() {
             </h2>
             {imagesLoading ? (
               <div className="flex justify-center">
-                <p>Photos werden geladen...</p>
+                <p>Fotos werden geladen...</p>
               </div>
             ) : recentImages.length === 0 ? (
               <div className="flex items-center flex-col">
-                <h3 className="text-[2rem]">Keine Photos gefunden.</h3>
+                <h3 className="text-[2rem]">Keine Fotos gefunden.</h3>
                 <img width={400} src="illustrations/no_photos.svg" alt="" />
               </div>
             ) : (
