@@ -84,12 +84,13 @@ const ImageClassifier: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[600px] rounded-xl border-6 p-4 shadow-lg">
-      <h2 className="mb-4 text-center text-2xl font-semibold">
+    <div className="mx-auto w-full rounded-xl">
+      <h2 className="mb-4 text-center text-[2.5rem] font-semibold">
         CapybaraClassifier
       </h2>
+      <p className="text-center text-[1.25rem]">Probiere hier die KI aus! Wähle dafür zuerst ein Bild von einem Vogel aus.</p>
       <div className="flex gap-6 max-lg:flex-col">
-        <div className="flex h-[400px] w-full items-center justify-center rounded-xl bg-white p-2 text-black dark:text-black">
+        {/* <div className="flex h-[400px] w-full items-center justify-center rounded-xl bg-white p-2 text-black dark:text-black">
           {selectedWindow == "picture" ? (
             <div>
               <button
@@ -120,8 +121,8 @@ const ImageClassifier: React.FC = () => {
           ) : (
             <h3 className="mt-4 text-2xl">{classes[result[0]]}</h3>
           )}
-        </div>
-        <div className="flex justify-center gap-6 lg:flex-col">
+        </div> */}
+        {/* <div className="flex justify-center gap-6 lg:flex-col">
           <button
             onClick={() => setSelectedWindow("picture")}
             className="text- flex h-[100px] w-[150px] cursor-pointer items-center justify-center rounded-xl bg-white bg-cover text-black"
@@ -142,6 +143,42 @@ const ImageClassifier: React.FC = () => {
           <button className="text- flex h-[100px] w-[150px] cursor-pointer items-center justify-center rounded-xl bg-white text-black">
             Attention Map
           </button>
+        </div> */}
+        <div className="flex gap-[100px] max-lg:flex-col justify-center items-center w-screen mt-12">
+            <div className="flex bg-white dark:bg-black rounded-lg text-black dark:text-white max-w-[500px] max-h-[500px] w-screen h-screen items-center justify-center">
+              { 
+                result.length <= 0 ? (
+                <>
+                  <button
+                    onClick={handleClick}
+                    className="flex flex-col items-center hover:cursor-pointer"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      width={60}
+                      className="fill-black dark:fill-white"
+                    >
+                      <path d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6l96 0 32 0 208 0c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z" />
+                    </svg>
+
+                    <p className="mx-auto text-[1.2rem] font-semibold">
+                      Wähle ein Bild aus
+                    </p>
+                  </button>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    className="hidden"
+                  />
+                </>
+              ) : <div>{result}</div>
+              }
+
+            </div>
+
         </div>
       </div>
     </div>
