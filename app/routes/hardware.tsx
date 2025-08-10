@@ -14,47 +14,60 @@ export default function Hardware() {
   return (
     <div>
       <NavBar />
-      <main className="mx-auto mt-35 max-w-[1600px] px-4 text-black dark:text-white">
-        <h1 className="mb-4 text-center text-[3rem] font-bold">Hardware</h1>
-        <section id="esp32-cam" className="bg-[#2d2d2d] rounded-2xl p-5 mt-15 flex flex-row justify-around text-black">
-          <div className="flex flex-col justify-around">
+      <main className="mx-auto mt-35 max-w-[1600px] px-4 text-black dark:text-white flex flex-col items-center">
+        {/* <h1 className="mb-4 text-center text-[3rem] font-bold">Hardware</h1> */}
+        <h2 className="text-[3rem] font-semibold">Komponenten</h2>
+        <section id="esp32-cam" className="p-5 mt-4 max-w-[1000px]">
+            <h2 className="text-center text-[2rem] font-semibold">
+              ESP32-CAM
+            </h2>
+              <p className="text-center text-[1.25rem] mb-8">
+                Die Kamera zusammen mit ausreichend Rechenleistung und geringem Stromverbrauch.
+              </p>
+          <div className="flex gap-12 max-lg:flex-col">
             <img src="/images/ESP32.jpg" alt="ESP32" className="rounded-2xl" width="500px"/>
-          </div>
-          <div className="flex flex-col justify-between">
-            <h2 className="text-center text-[2.25rem] font-semibold text-white">
-              ESP32 Cam Module
-            </h2>
-            <div className="bg-white rounded-2xl p-3 ml-3 min-h-[27vh]">
-              <p className="text-center text-[1.25rem]">
-                Die Hauptkomponente mit einer Kamera ausgestattet und genügend Rechenleistung.
-              </p>
+            <div className="flex flex-col gap-4 text-[1.5rem]">
+              <p>WIFI und Bluetooth</p>
+              <p>OV2640 Kamera</p>
+              <p>2 MegaPixel</p>
             </div>
           </div>
+          <div className="flex flex-col justify-between">
+          </div>
         </section>
-        <section id="esp32-cam" className="bg-[#2d2d2d] rounded-2xl p-5 mt-15 flex flex-row justify-around text-black">
+        <div className="flex max-lg:flex-col">
+        <section id="sensor" className="p-5 mt-15 flex flex-col items-center">
+            <h2 className="text-center text-[1.5rem] font-semibold">
+               BerryBase HC-SR501 PIR Sensor
+            </h2>
           <div className="flex flex-col justify-around">
-            <img src="/images/PIR.jpg" alt="ESP32" className="rounded-2xl" width="500px"/>
+            <img src="/images/PIR.jpg" alt="ESP32" className="rounded-2xl" width="250px"/>
           </div>
-          <div className="flex flex-col justify-between">
-            <h2 className="text-center text-[2.25rem] font-semibold text-white">
-               Motion Sensor
+            
+        </section>
+        <section id="battery" className="p-5 mt-15 flex flex-col items-center">
+            <h2 className="text-center text-[1.5rem] font-semibold">
+               5000mAh Batterie
             </h2>
-            <div className="bg-white rounded-2xl p-3 ml-3 min-h-[27vh]">
-              <p className="text-center text-[1.25rem]">
-                Ein einfacher Bewegungssensor.
-              </p>
-            </div>
+          <div className="flex flex-col justify-around">
+            <img src="/images/PIR.jpg" alt="ESP32" className="rounded-2xl" width="250px"/>
           </div>
+            
         </section>
-        <section id="battery">
-          <h2 className="text-center text-[2.25rem] font-semibold">Battery</h2>
-          <p className="text-center text-[1.25rem]">5V</p>
+        <section id="sensor" className="p-5 mt-15 flex flex-col items-center">
+            <h2 className="text-center text-[1.5rem] font-semibold">
+               3D-gedruckter Kasten
+            </h2>
+          <div className="flex flex-col justify-around">
+            <img src="/images/PIR.jpg" alt="ESP32" className="rounded-2xl" width="250px"/>
+          </div>
+            
         </section>
-        <section id="case">
-          <h2 className="text-center text-[2.25rem] font-semibold">Case</h2>
-          <p className="text-center text-[1.25rem]">3d printed.</p>
-        </section>
+        </div>
+        <h2 className="text-[3rem] font-semibold">Setup</h2>
+        <h2 className="text-[3rem] font-semibold">Funktionierende Kamera</h2>
       </main>
+      <Footer />
     </div>
   );
 }
