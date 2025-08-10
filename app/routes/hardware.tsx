@@ -15,8 +15,8 @@ export default function Hardware() {
     <div>
       <NavBar />
       <main className="mx-auto mt-35 max-w-[1600px] px-4 text-black dark:text-white flex flex-col items-center">
-        <h1 className="mb-4 text-center text-[3rem] font-bold">Hardware</h1>
-        <h2 className="text-[2.5rem] font-semibold">Komponenten</h2>
+        {/* <h1 className="mb-4 text-center text-[3rem] font-bold">Hardware</h1> */}
+        <h2 className="text-[3rem] font-semibold">Komponenten</h2>
         <section id="esp32-cam" className="p-5 mt-4 max-w-[1000px]">
             <h2 className="text-center text-[2rem] font-semibold">
               ESP32-CAM
@@ -64,8 +64,8 @@ export default function Hardware() {
             
         </section>
         </div>
-        <h2 className="text-[2.5rem] font-semibold">Setup</h2>
-        <h2 className="text-[2.5rem] font-semibold">Funktionierende Kamera</h2>
+        <h2 className="text-[3rem] font-semibold">Setup</h2>
+        <h2 className="text-[3rem] font-semibold">Funktionierende Kamera</h2>
       </main>
       <Footer />
     </div>
