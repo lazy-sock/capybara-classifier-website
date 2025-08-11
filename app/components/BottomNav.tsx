@@ -58,6 +58,12 @@ export const BottomNav = ({ selected = 0 }) => {
 
   const bubbleRadius = 24; // half of bubble size (48x48)
 
+  const [isClient, setIsClient] = useState(false);
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className="relative">
       <div className="fixed bottom-6 left-1/2 z-10 w-[90%] max-w-md -translate-x-1/2">
@@ -92,6 +98,7 @@ export const BottomNav = ({ selected = 0 }) => {
           }}
         >
           {tabs.map((tab, index) => (
+            isClient ? (
             <Link
               to={`/${tab.label.toLowerCase()}`}
               key={index}
@@ -114,7 +121,23 @@ export const BottomNav = ({ selected = 0 }) => {
                   active === index ? "bg-white" : "bg-transparent"
                 }`}
               />
-            </Link>
+            </Link>) : (            <div
+              className="relative z-10 flex w-1/4 flex-col items-center bg-transparent"
+            >
+              {/* Hide icon if active (shown in bubble) */}
+              <div
+                className={`text-xl transition-opacity duration-200 ${
+                  active === index ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                {tab.icon}
+              </div>
+              <div
+                className={`mt-1 h-1 w-1 rounded-full ${
+                  active === index ? "bg-white" : "bg-transparent"
+                }`}
+              />
+            </div>)
           ))}
         </div>
 
