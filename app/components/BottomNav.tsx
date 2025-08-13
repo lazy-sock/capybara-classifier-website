@@ -47,7 +47,7 @@ const tabs = [
 export const BottomNav = ({ selected = 0 }) => {
   const [active, setActive] = useState(selected || 0);
   const [bubbleLeft, setBubbleLeft] = useState(0);
-  const buttonRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const buttonRefs = useRef<(HTMLAnchorElement | HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const el = buttonRefs.current[active];
@@ -122,6 +122,10 @@ export const BottomNav = ({ selected = 0 }) => {
                 }`}
               />
             </Link>) : (            <div
+            key={index}
+            ref={(el) => {
+                buttonRefs.current[index] = el;
+              }}
               className="relative z-10 flex w-1/4 flex-col items-center bg-transparent"
             >
               {/* Hide icon if active (shown in bubble) */}
