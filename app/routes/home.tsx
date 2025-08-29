@@ -17,7 +17,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 function HardwareModel() {
-  const { scene } = useGLTF("/models/test.glb");
+  const { scene } = useGLTF("/models/camModel.glb");
   scene.position.set(0, 0, 0);
   return <primitive object={scene} scale={1.5} />;
 }
@@ -32,7 +32,7 @@ export default function Home() {
           id="hero"
           className="mt-12 mb-12 flex items-center justify-center px-4 lg:mt-20"
         >
-          <div className="grid w-fit max-w-[1400px] grid-cols-2 gap-[100px] max-lg:grid-cols-1">
+          <div className="grid place-items-center w-fit max-w-[1400px] grid-cols-2 gap-[100px] max-lg:grid-cols-1">
             <div className="flex flex-col justify-center max-lg:w-full max-lg:items-center">
               <h1 className="mb-4 text-[2.5rem] font-bold lg:mb-8 lg:text-6xl">
                 Smart Birdhouse
@@ -57,7 +57,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <img src="illustrations/hero.svg" alt="Birdhouse" width="500px" />
+              <img src="illustrations/hero.jpg" alt="Birdhouse" width="500px" className="rounded-4xl" />
             </div>
           </div>
         </section>
@@ -135,8 +135,8 @@ export default function Home() {
               <OrbitControls
                 makeDefault
                 target={[0, 0, 0]}
-                minDistance={1}
-                maxDistance={10}
+                minDistance={0.1}
+                maxDistance={1}
               />
               <mesh>
                 <HardwareModel />
