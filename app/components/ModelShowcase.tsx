@@ -97,7 +97,7 @@ const ImageClassifier: React.FC = () => {
             }} 
             className="flex bg-cover bg-center bg-white dark:bg-black rounded-xl text-black dark:text-white max-w-[500px] max-h-[500px] w-screen h-screen items-center justify-center ">
               { 
-                result.length <= 0 ? (
+                result.length == 0 ? (
                 <>
                   <button
                     onClick={handleClick}
@@ -124,7 +124,18 @@ const ImageClassifier: React.FC = () => {
                     className="hidden"
                   />
                 </>
-              ) : <div className="text-[1.5rem] backdrop-blur-lg rounded-lg px-2 py-1 dark:backdrop-brightness-75 font-semibold backdrop-brightness-150">{classes[result[0]]}</div>
+              ) : (
+                <>
+                <button onClick={handleClick} className="text-[1.5rem] backdrop-blur-lg rounded-lg px-2 py-1 dark:backdrop-brightness-75 font-semibold backdrop-brightness-150">{classes[result[0]]}</button>
+                <input
+                    type="file"
+                    accept="image/*"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    className="hidden"
+                  />
+                </>
+              )
               }
 
             </div>
