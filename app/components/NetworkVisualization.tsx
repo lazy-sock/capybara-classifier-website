@@ -9,12 +9,7 @@ const NetworkVisualization: React.FC = () => {
   const layer_labels = [
     "Input",
     "ResNet50",
-    "ResNet50",
-    "ResNet50",
-    "ResNet50",
-    "ResNet50",
-    "Attention 1",
-    "Attention 2",
+    "Attention",
     "Global Average Pooling",
     "Feature Enhancement",
     "Feature Enhancement",
@@ -31,116 +26,48 @@ const NetworkVisualization: React.FC = () => {
 
     // Layer 2 (ResNet50 Initial Conv + Pool)
     [
-      { id: "conv1_1", label: "Conv1_1" },
-      { id: "conv1_2", label: "Conv1_2" },
-      { id: "conv1_3", label: "Conv1_3" },
-      { id: "conv1_4", label: "Conv1_4" },
-      { id: "conv1_5", label: "Conv1_5" },
-      { id: "conv1_6", label: "Conv1_6" },
-      { id: "conv1_7", label: "Conv1_7" },
-      { id: "conv1_8", label: "Conv1_8" },
-    ],
-
-    // Layer 3 (ResNet50 Layer1 - 56x56x256)
-    [
-      { id: "layer1_1", label: "L1_1" },
-      { id: "layer1_2", label: "L1_2" },
-      { id: "layer1_3", label: "L1_3" },
-      { id: "layer1_4", label: "L1_4" },
-      { id: "layer1_5", label: "L1_5" },
-      { id: "layer1_6", label: "L1_6" },
-      { id: "layer1_7", label: "L1_7" },
-      { id: "layer1_8", label: "L1_8" },
-    ],
-
-    // Layer 4 (ResNet50 Layer2 - 28x28x512)
-    [
-      { id: "layer2_1", label: "L2_1" },
-      { id: "layer2_2", label: "L2_2" },
-      { id: "layer2_3", label: "L2_3" },
-      { id: "layer2_4", label: "L2_4" },
-      { id: "layer2_5", label: "L2_5" },
-      { id: "layer2_6", label: "L2_6" },
-      { id: "layer2_7", label: "L2_7" },
-      { id: "layer2_8", label: "L2_8" },
-    ],
-
-    // Layer 5 (ResNet50 Layer3 - 14x14x1024)
-    [
-      { id: "layer3_1", label: "L3_1" },
-      { id: "layer3_2", label: "L3_2" },
-      { id: "layer3_3", label: "L3_3" },
-      { id: "layer3_4", label: "L3_4" },
-      { id: "layer3_5", label: "L3_5" },
-      { id: "layer3_6", label: "L3_6" },
-      { id: "layer3_7", label: "L3_7" },
-      { id: "layer3_8", label: "L3_8" },
-    ],
-
-    // Layer 6 (ResNet50 Layer4 - 7x7x2048)
-    [
-      { id: "layer4_1", label: "L4_1" },
-      { id: "layer4_2", label: "L4_2" },
-      { id: "layer4_3", label: "L4_3" },
-      { id: "layer4_4", label: "L4_4" },
-      { id: "layer4_5", label: "L4_5" },
-      { id: "layer4_6", label: "L4_6" },
-      { id: "layer4_7", label: "L4_7" },
-      { id: "layer4_8", label: "L4_8" },
+      { id: "channel_0_0", label: "Conv1_1" },
+      { id: "channel_0_1", label: "Conv1_2" },
+      { id: "channel_0_2", label: "Conv1_3" },
+      { id: "channel_0_3", label: "Conv1_4" },
+      { id: "channel_0_4", label: "Conv1_5" },
+      { id: "channel_0_5", label: "Conv1_6" },
+      { id: "channel_0_6", label: "Conv1_7" },
+      { id: "channel_0_7", label: "Conv1_8" },
     ],
 
     // Layer 7 (Attention Module 1)
     [
-      { id: "att1_1", label: "Att1_1" },
-      { id: "att1_2", label: "Att1_2" },
-      { id: "att1_3", label: "Att1_3" },
-      { id: "att1_4", label: "Att1_4" },
-      { id: "att1_5", label: "Att1_5" },
-      { id: "att1_6", label: "Att1_6" },
-      { id: "att1_7", label: "Att1_7" },
-      { id: "att1_8", label: "Att1_8" },
-    ],
-
-    // Layer 8 (Attention Module 2)
-    [
-      { id: "att2_1", label: "Att2_1" },
-      { id: "att2_2", label: "Att2_2" },
-      { id: "att2_3", label: "Att2_3" },
-      { id: "att2_4", label: "Att2_4" },
-      { id: "att2_5", label: "Att2_5" },
-      { id: "att2_6", label: "Att2_6" },
-      { id: "att2_7", label: "Att2_7" },
-      { id: "att2_8", label: "Att2_8" },
+      { id: "channel_1_0", label: "Att1_1" },
+      { id: "channel_1_1", label: "Att1_2" },
+      { id: "channel_1_2", label: "Att1_3" },
+      { id: "channel_1_3", label: "Att1_4" },
+      { id: "channel_1_4", label: "Att1_5" },
+      { id: "channel_1_5", label: "Att1_6" },
+      { id: "channel_1_6", label: "Att1_7" },
+      { id: "channel_1_7", label: "Att1_8" },
     ],
 
     // Layer 9 (Global Average Pooling)
     [
-      { id: "gap_1", label: "GAP_1" },
-      { id: "gap_2", label: "GAP_2" },
-      { id: "gap_3", label: "GAP_3" },
-      { id: "gap_4", label: "GAP_4" },
-      { id: "gap_5", label: "GAP_5" },
-      { id: "gap_6", label: "GAP_6" },
-      { id: "gap_7", label: "GAP_7" },
-      { id: "gap_8", label: "GAP_8" },
+      { id: "channel_2_0", label: "GAP_1" },
+      { id: "channel_2_1", label: "GAP_2" },
+      { id: "channel_2_2", label: "GAP_3" },
+      { id: "channel_2_3", label: "GAP_4" },
+      { id: "channel_2_4", label: "GAP_5" },
+      { id: "channel_2_5", label: "GAP_6" },
+      { id: "channel_2_6", label: "GAP_7" },
+      { id: "channel_2_7", label: "GAP_8" },
     ],
 
     // Layer 10 (Feature Enhancement - First Linear Layer 2048->1024)
     [
-      { id: "enh1_1", label: "E1_1" },
-      { id: "enh1_2", label: "E1_2" },
-      { id: "enh1_3", label: "E1_3" },
-      { id: "enh1_4", label: "E1_4" },
-      { id: "enh1_5", label: "E1_5" },
-      { id: "enh1_6", label: "E1_6" },
-    ],
-
-    // Layer 11 (Feature Enhancement - Second Linear Layer 1024->512)
-    [
-      { id: "enh2_1", label: "E2_1" },
-      { id: "enh2_2", label: "E2_2" },
-      { id: "enh2_3", label: "E2_3" },
-      { id: "enh2_4", label: "E2_4" },
+      { id: "channel_3_1", label: "E1_1" },
+      { id: "channel_3_2", label: "E1_2" },
+      { id: "channel_3_3", label: "E1_3" },
+      { id: "channel_3_4", label: "E1_4" },
+      { id: "channel_3_5", label: "E1_5" },
+      { id: "channel_3_6", label: "E1_6" },
     ],
 
     // Layer 12 (Output - Bird Species Classification)
