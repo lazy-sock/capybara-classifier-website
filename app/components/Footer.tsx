@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div className="dark:bg-dark-black mt-auto wt-auto-felx flex w-full flex-col bg-black p-8 text-white">
-      <div className="flex flex-wrap justify-center gap-30 pb-4">
+      <div className="flex flex-wrap justify-center max-sm:gap-15 gap-30">
         <div className="flex flex-col">
           <h3 className="text-2xl">Showcase</h3>
           <Link to="/">Home</Link>
@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mx-auto my-4 w-full max-w-7xl border-t border-white"></div>
-      <div className="mt-1 flex justify-around">
+      <div className="mt-1 flex justify-around items-center max-sm:flex-col">
         <div className="flex items-center text-left">
           <a> © Capybara Classifier 2025</a>
         </div>

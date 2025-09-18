@@ -12,7 +12,7 @@ export default function AIBlobs() {
   return (
     <>
       <h3 className="text-center text-[2.5rem]">Neugierig geworden?</h3>
-      <div className="flex w-full flex-col justify-center gap-[100px] lg:flex-row">
+      <div className="flex w-full flex-col justify-center items-center gap-[100px] lg:flex-row">
         <div className="relative">
           {/* Hidden SVG to define the mask */}
           <svg

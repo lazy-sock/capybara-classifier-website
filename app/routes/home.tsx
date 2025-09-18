@@ -25,19 +25,19 @@ useGLTF.preload("/models/test.glb");
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex justify-center items-center">
       <NavBar />
        <main className="mt-35 text-black dark:text-white">
          <section
           id="hero"
-          className="mt-12 mb-12 flex items-center justify-center px-4 lg:mt-20"
+          className="mt-12 mb-12 flex items-center p-20 justify-center lg:mt-20"
         >
           <div className="grid place-items-center w-fit max-w-[1400px] grid-cols-2 gap-[100px] max-lg:grid-cols-1">
             <div className="flex flex-col justify-center max-lg:w-full max-lg:items-center">
-              <h1 className="mb-4 text-[2.5rem] font-bold lg:mb-8 lg:text-6xl">
+              <h1 className="mb-4 text-[2.5rem] font-bold lg:mb-8 lg:text-6xl text-center">
                 Smart Birdhouse
               </h1>
-              <p className="mb-6 text-[1.15rem] lg:text-[1.5rem] font-roboto">
+              <p className="mb-6 text-[1.15rem] lg:text-[1.5rem] font-roboto text-center lg:text-left">
                 Die CapybaraCam ist ein automatisches Vogelhaus mit integrierter KI-Klassifikation, das dabei hilft, Vögel zu beobachten und ihr Verhalten zu verstehen. 
                 Unser selbst entwickelter CapybaraClassifier erkennt verschiedene Eigenschaften der tierischen Bewohner und liefert nützliche Informationen in Echtzeit.
               </p>
@@ -75,16 +75,16 @@ export default function Home() {
 
         <section
           id="artificial-intelligence"
-          className="bg-primary min-h-[900px] text-white"
+          className="bg-primary min-h-[900px] text-white flex flex-col items-center justify-center"
         >
           <h2 className="mb-8 text-center text-[2rem] font-semibold lg:text-[3rem]">
             Unsere Künstliche Intelligenz
           </h2>
-          <p className="mx-auto mb-10 max-w-[1000px] p-6 text-center text-[1.25rem]">
+          <p className="mx-auto mb-10 max-w-[1000px] p-10 text-center text-[1.25rem]">
             Wir haben ein neuronales Netz entwickelt, das Vögel erkennt und klassifiziert. Das ist an sich keine neue Idee 
             – aber unsere Umsetzung funktioniert besonders zuverlässig. Mit insgesammt 550 Trainingsbildern kann unser CapybaraClassifier zwischen 10 Vogelarten und dem Eichhörnchen unterscheiden.
           </p>
-          <div className="p-6">
+          <div className="p-6 flex justify-center itmems-center">
             <ModelShowcase />
           </div>
           <h3 className="mt-12 mb-2 text-center text-[2.5rem]">Statistiken</h3>
@@ -121,14 +121,14 @@ export default function Home() {
             fill="#204116"
           />
         </svg>
-        <section id="faq" className="mt-12">
+        <section id="faq" className="mt-12 p-10">
           <FAQ />
         </section>
         <section id="smart-birdhouse" className="mt-12">
           <h2 className="text-center text-[2rem] font-bold lg:text-[3rem]">
             Smart Birdhouse
           </h2>
-          <div className="mx-auto mt-8 h-[500px] w-full max-w-[800px]">
+          <div className="mx-auto mt-8 h-[500px] w-full max-w-[800px] p-10">
             <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
               <ambientLight intensity={5} />
               <directionalLight position={[5, 5, 10]} intensity={10} />
@@ -144,8 +144,8 @@ export default function Home() {
             </Canvas>
           </div>
         </section>
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }
