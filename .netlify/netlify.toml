@@ -6,7 +6,7 @@ headers = []
 [functions."*"]
 
 [build]
-publish = "D:\\Code\\BWKI\\capybara-classifier-website\\build\\client"
+publish = "D:\\Code\\BWKI\\capybara-classifier-website\\dist"
 publishOrigin = "ui"
 commandOrigin = "ui"
 command = "npm run build"

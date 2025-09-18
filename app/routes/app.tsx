@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Cam from "../components/Cam";
 import BirdhouseDashboard from "../components/BirdhouseDashboard";

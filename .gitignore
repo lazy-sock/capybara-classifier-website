@@ -1,6 +1,8 @@
 .DS_Store
 /node_modules/
 .env
+.dist
+.netlify/
 
 # React Router
 /.react-router/

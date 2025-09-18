@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { FAQ } from "../components/FAQ";
@@ -27,8 +27,8 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <NavBar />
-      <main className="mt-35 text-black dark:text-white">
-        <section
+       <main className="mt-35 text-black dark:text-white">
+         <section
           id="hero"
           className="mt-12 mb-12 flex items-center justify-center px-4 lg:mt-20"
         >

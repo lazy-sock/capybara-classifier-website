@@ -1,15 +1,18 @@
-import { reactRouter } from "@react-router/dev/vite";
-import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
+    react(),        // zwingend für React SPA
     tailwindcss(),
-    reactRouter(),
     tsconfigPaths(),
     VitePWA({
+      workbox: {
+        maximumFileSizeToCacheInBytes: 30 * 1024 * 1024
+      },
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg", "robots.txt", "apple-touch-icon.png"],
       manifest: {
@@ -40,5 +43,10 @@ export default defineConfig({
   ],
   optimizeDeps: {
     include: ["@react-three/drei", "three"]
-  }
+  },
+  build: {
+    chunkSizeWarningLimit: 2000, // Größe in KB
+    outDir: "dist",               // Output für SPA Build
+  },
+  root: ".",                     // Projekt-Root, index.html sollte hier liegen
 });
