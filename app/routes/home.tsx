@@ -18,7 +18,7 @@ export function meta({}: Route.MetaArgs) {
 }
 function HardwareModel() {
   const { scene } = useGLTF("/models/camModel.glb");
-  scene.position.set(0, 0, 0);
+  scene.position.set(0, -0.2, 0);
   return <primitive object={scene} scale={1.5} />;
 }
 useGLTF.preload("/models/test.glb");
@@ -30,11 +30,11 @@ export default function Home() {
        <main className="mt-35 text-black dark:text-white">
          <section
           id="hero"
-          className="mt-12 mb-12 flex items-center p-20 justify-center lg:mt-20"
+          className="mt-12 mb-12 flex items-center justify-center lg:mt-20"
         >
           <div className="grid place-items-center w-fit max-w-[1400px] grid-cols-2 gap-[100px] max-lg:grid-cols-1">
             <div className="flex flex-col justify-center max-lg:w-full max-lg:items-center">
-              <h1 className="mb-4 text-[2.5rem] font-bold lg:mb-8 lg:text-6xl text-center">
+              <h1 className="mb-4 text-[2.5rem] font-bold lg:mb-8 lg:text-6xl">
                 Smart Birdhouse
               </h1>
               <p className="mb-6 text-[1.15rem] lg:text-[1.5rem] font-roboto text-center lg:text-left">

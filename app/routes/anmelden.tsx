@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { signIn } from "~/auth";

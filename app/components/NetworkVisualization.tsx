@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const NetworkVisualization: React.FC = () => {
   // State to track which node is being hovered
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const [scale, setScale] = useState(1);
+  useEffect(() => {
+    const handleResize = () => {
+      const baseWidth = 1000; // deine aktuelle Berechnungsbasis
+      const newScale = Math.min(window.innerWidth / baseWidth, 1);
+      setScale(newScale);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // einmal initial berechnen
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const probablities = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.1, 0.2];
 
@@ -11,7 +24,6 @@ const NetworkVisualization: React.FC = () => {
     "ResNet50",
     "Attention",
     "Global Average Pooling",
-    "Feature Enhancement",
     "Feature Enhancement",
     "Output",
   ];
@@ -153,14 +165,19 @@ const NetworkVisualization: React.FC = () => {
   const connections = generateConnections();
 
   return (
-    <div className="mx-auto max-w-6xl">
+    <div className="">
       <div
-        className="relative rounded-lg p-8 shadow-lg"
-        style={{ height: "1500px" }}
+        className="relative rounded-lg sm:p-8 origin-top-left"
+        style={{height: "800px",
+                minHeight: "100px",
+                width: "1200px/baseWidth",
+                transform: `scale(${scale})`,
+                transformOrigin: "top left",
+        }}
       >
         {/* SVG for all curves */}
         <svg
-          className="pointer-events-none absolute inset-0 h-full w-full"
+          className="pointer-events-none absolute inset-0 h-full w-full m-3"
           style={{ width: "100%", height: "100%" }}
         >
           {/* Render all connections */}
@@ -194,7 +211,7 @@ const NetworkVisualization: React.FC = () => {
               return (
                 <div
                   key={node.id}
-                  className="bg-primary hover:bg-secondary dark:hover:bg-dark-secondary absolute flex -translate-x-1/2 -translate-y-1/2 transform cursor-pointer flex-col items-center justify-center rounded-2xl text-white shadow-lg transition-colors"
+                  className="bg-primary hover:bg-secondary dark:hover:bg-dark-secondary absolute flex -translate-x-1/2 -translate-y-1/2 transform cursor-pointer flex-col items-center justify-center rounded-2xl text-white shadow-lg transition-colors m-3"
                   style={{
                     left: `${pos.x}px`,
                     top: `${pos.y}px`,
@@ -217,7 +234,7 @@ const NetworkVisualization: React.FC = () => {
               return (
                 <div
                   key={node.id}
-                  className="bg-primary hover:bg-secondary absolute flex -translate-x-1/2 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-2xl text-white shadow-lg transition-colors"
+                  className="bg-primary hover:bg-secondary absolute flex -translate-x-1/2 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-2xl text-white shadow-lg transition-colors m-3"
                   style={{
                     left: `${pos.x}px`,
                     top: `${pos.y}px`,

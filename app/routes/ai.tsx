@@ -196,13 +196,15 @@ export default function HowItWorks() {
           fill="#204116"
         />
       </svg>
-      <section className="mx-auto mt-12 w-full max-w-[1100px]">
-        <h2 className="mb-[10px] text-[3rem] font-bold">Visualisierung</h2>
-        <p className="mb-[100px] text-[1.25rem]">
+      <section className="mx-auto mt-12 w-full max-w-[1250px] flex flex-col justify-center">
+        <h2 className="mb-[10px] text-[3rem] font-bold flex items-center justify-center">Visualisierung</h2>
+        <p className="mb-[100px] text-[1.25rem] flex items-center justify-center text-center">
           Hier siehst du die Visualisierung unseres Netzwerkes. Es zeigt vereinfacht alle wichtigen Layer und Operationen eines Convolutional neuronalen Netzwerkes.
           Ausgehend von den drei Farbkanälen eines Input Bildes "entscheidet" das Netzwerk welche Art das Bild am wahrscheinlichsten abbildet. 
         </p>
-        <NetworkVisualization />
+        <div className="relative rounded-lg shadow-md p-8 origin-top-left m-5">
+          <NetworkVisualization />
+        </div>
       </section>
       <Footer />
     </div>

@@ -24,6 +24,7 @@ export default function HowItWorks() {
         <p className="mb-8 text-center text-[1.2rem]">
           Um auf die App zuzugreifen musst du dich erstmal registrieren.
         </p>
+        <p className="text-[1rem] text-red-700 text-center">Noch in Bearbeitung</p>
         <div className="mb-8 flex items-center justify-center gap-8">
           <Link
             to="/registrieren"

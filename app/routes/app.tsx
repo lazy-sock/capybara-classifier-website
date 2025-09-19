@@ -126,6 +126,7 @@ export default function App() {
         <p className="mb-6 text-[1.25rem]">
           Bitte registriere dich oder melde dich an um die App zu verwenden. <br></br>Falls du bei der Einrichtung hilfe brauchst, schaue <a href="/get_started" className="text-blue-400">hier</a> nach.
         </p>
+        <p className="text-[1rem] text-red-600">Noch in Bearbeitung</p>
         <div className="flex gap-6">
         <Link
           to="/registrieren"
