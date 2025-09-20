@@ -24,9 +24,9 @@ export default function Hardware() {
               <p className="text-center text-[1.25rem] mb-8">
                 Die Kamera zusammen mit ausreichend Rechenleistung und geringem Stromverbrauch.
               </p>
-          <div className="flex gap-12 max-lg:flex-col">
+          <div className="flex gap-10 max-lg:flex-col">
             <img src="/images/ESP32.jpg" alt="ESP32" className="rounded-2xl" width="500px"/>
-            <div className="flex flex-col gap-4 text-[1.5rem]">
+            <div className="flex flex-col gap-2 text-[1.5rem]">
               <p>WIFI und Bluetooth</p>
               <p>OV2640 Kamera</p>
               <p>2 MegaPixel</p>
@@ -36,7 +36,7 @@ export default function Hardware() {
           </div>
         </section>
         <div className="flex justify-between max-lg:flex-col">
-          <section id="sensor" className="p-5 mt-15 flex flex-col items-center">
+          <section id="sensor" className="p-5 mt-8 flex flex-col items-center">
               <h2 className="text-center text-[1.5rem] font-semibold">
                 PIR Motion Sensor
               </h2>
@@ -45,7 +45,7 @@ export default function Hardware() {
             </div>
               
           </section>
-          <section id="battery" className="p-5 mt-15 flex flex-col items-center">
+          <section id="battery" className="p-5 mt-8 flex flex-col items-center">
               <h2 className="text-center text-[1.5rem] font-semibold">
                 5000mAh Batterie
               </h2>
@@ -54,7 +54,7 @@ export default function Hardware() {
             </div>
               
           </section>
-          <section id="sensor" className="p-5 mt-15 flex flex-col items-center">
+          <section id="sensor" className="p-5 mt-8 flex flex-col items-center">
               <h2 className="text-center text-[1.5rem] font-semibold">
                 3D-gedrucktes Casing
               </h2>
@@ -69,8 +69,8 @@ export default function Hardware() {
           <p className="p-2">
             Um die Kamera nachzubauen, musst die die oben gennanten komponenten wie in der folgenden Abbildung gezeigt verbinden.
           </p>
-          <div className="flex justify-between">
-            <img src="/images/WiringEasy.png" alt="ESP32" className="rounded-2xl m-3" width="500px"/>
+          <div className="flex justify-between max-lg:flex-col">
+              <img src="/images/WiringEasy.png" alt="ESP32" className="rounded-2xl m-3 max-lg:mx-auto" width="500px"/>
             <p className="m-3">
               Wenn du den ESP programmieren möchtest, benötigst du ein FTDI Module den du an dein Endgerät anschließen kannst. Nachdem du die Kamera und den Adapter mit zwei weiteren Jumperkabeln verbunden hast, kannst du mit der Arduino IDE anfangen deinen ESP32 zu programmieren.
               <br/>Ein gutes Grundgerüst, an dem du dich orientiren kannst, ist das Beispiel 'Camera Webserver', das direkt mitimportiert wird, wenn du das ESP32 Board in der Arduino IDE installierst. 

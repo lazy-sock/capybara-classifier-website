@@ -33,11 +33,11 @@ export default function Home() {
           className="mt-12 mb-12 flex items-center justify-center lg:mt-20"
         >
           <div className="grid place-items-center w-fit max-w-[1400px] grid-cols-2 gap-[100px] max-lg:grid-cols-1">
-            <div className="flex flex-col justify-center max-lg:w-full max-lg:items-center">
+            <div className="flex flex-col justify-center max-lg:w-screen max-lg:items-center px-2">
               <h1 className="mb-4 text-[2.5rem] font-bold lg:mb-8 lg:text-6xl">
                 Smart Birdhouse
               </h1>
-              <p className="mb-6 text-[1.15rem] lg:text-[1.5rem] font-roboto text-center lg:text-left">
+              <p className="mb-6 text-[1rem] lg:text-[1.5rem] font-roboto text-center lg:text-left">
                 Die CapybaraCam ist ein automatisches Vogelhaus mit integrierter KI-Klassifikation, das dabei hilft, Vögel zu beobachten und ihr Verhalten zu verstehen. 
                 Unser selbst entwickelter CapybaraClassifier erkennt verschiedene Eigenschaften der tierischen Bewohner und liefert nützliche Informationen in Echtzeit.
               </p>
@@ -57,7 +57,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <img src="illustrations/hero.jpg" alt="Birdhouse" width="500px" className="rounded-4xl" />
+              <img src="illustrations/hero.jpg" alt="Birdhouse" className="rounded-4xl w-[500px] max-sm:max-w-[320px] max-sm:w-screen" />
             </div>
           </div>
         </section>
@@ -77,7 +77,7 @@ export default function Home() {
           id="artificial-intelligence"
           className="bg-primary min-h-[900px] text-white flex flex-col items-center justify-center"
         >
-          <h2 className="mb-8 text-center text-[2rem] font-semibold lg:text-[3rem]">
+          <h2 className="md:mb-4 mb-0 text-center text-[2rem] font-semibold lg:text-[3rem]">
             Unsere Künstliche Intelligenz
           </h2>
           <p className="mx-auto mb-10 max-w-[1000px] p-10 text-center text-[1.25rem]">
