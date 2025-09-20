@@ -21,22 +21,24 @@ import Wiki from "./routes/wiki";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="ai" element={<Ai />} />
-        <Route path="anmelden" element={<Anmelden />} />
-        <Route path="app" element={<AppPage />} />
-        <Route path="code" element={<Code />} />
-        <Route path="connect" element={<Connect />} />
-        <Route path="get_started" element={<GetStarted />} />
-        <Route path="hardware" element={<Hardware />} />
-        <Route path="how_it_works" element={<HowItWorks />} />
-        <Route path="image_page" element={<ImagePage />} />
-        <Route path="registrieren" element={<Registrieren />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="wiki" element={<Wiki />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="font-winky text-black dark:text-white flex flex-col min-h-screen">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="ai" element={<Ai />} />
+          <Route path="anmelden" element={<Anmelden />} />
+          <Route path="app" element={<AppPage />} />
+          <Route path="code" element={<Code />} />
+          <Route path="connect" element={<Connect />} />
+          <Route path="get_started" element={<GetStarted />} />
+          <Route path="hardware" element={<Hardware />} />
+          <Route path="how_it_works" element={<HowItWorks />} />
+          <Route path="image_page" element={<ImagePage />} />
+          <Route path="registrieren" element={<Registrieren />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="wiki" element={<Wiki />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   </React.StrictMode>
 );
