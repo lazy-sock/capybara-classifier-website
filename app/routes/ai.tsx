@@ -133,13 +133,9 @@ export default function HowItWorks() {
           </div>
         </div>
         <p className="mt-12 text-[1.25rem]">
-          The Network is a CNN with a resnet50 backbone and two attention
-          modules. The attention modules help identify important features in the
-          image. The input images are 224x224, which is pretty high for an AI.
-          The resulting accuracy is 90%. The network also has the option to
-          output that the image contains a bird of another species which isn't
-          part of the database's classes. Additionally it can also decide how
-          confident it is with it's prediction.
+          Das Netzwerk ist ein CNN mit einem Resnet50-Backbone und zwei Aufmerksamkeitsmodulen. Die Aufmerksamkeitsmodule helfen dabei, wichtige Merkmale im Bild zu identifizieren. 
+          Die Eingabebilder haben eine Größe von 224 x 224, was für eine KI ziemlich hoch ist. Die resultierende Genauigkeit beträgt ~95 %. 
+          Darüber hinaus kann es auch entscheiden, wie sicher es sich seiner Vorhersage ist.
         </p>
       </main>
       <svg

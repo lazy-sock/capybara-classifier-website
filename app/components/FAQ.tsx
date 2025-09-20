@@ -14,7 +14,7 @@ const faqs: FAQItem[] = [
   {
     question: "Wie nutze ich Capybara?",
     answer:
-      "To use the Capybara Classifier, simply upload your images and let the AI analyze them. It will classify the images based on the trained model. You can also use it in your own birdhouse yourself. All necessary files and information is either here or on github. But be aware that this is a bit more complex.",
+      "Um den Capybara Classifier zu verwenden, laden Sie einfach Ihre Bilder hoch und lassen Sie sie von der KI analysieren. Diese klassifiziert die Bilder auf Grundlage des trainierten Modells. Sie können die CapybaraCam auch selbst in Ihrem eigenen Vogelhaus verwenden. Alle erforderlichen Dateien und Informationen finden Sie entweder hier oder auf GitHub. Beachten Sie jedoch, dass dies etwas komplexer ist.",
   },
   {
     question: "Wie kann ich bei dem Projekt mitwirken?",

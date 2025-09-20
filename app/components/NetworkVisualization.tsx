@@ -74,12 +74,12 @@ const NetworkVisualization: React.FC = () => {
 
     // Layer 10 (Feature Enhancement - First Linear Layer 2048->1024)
     [
-      { id: "channel_3_1", label: "E1_1" },
-      { id: "channel_3_2", label: "E1_2" },
-      { id: "channel_3_3", label: "E1_3" },
-      { id: "channel_3_4", label: "E1_4" },
-      { id: "channel_3_5", label: "E1_5" },
-      { id: "channel_3_6", label: "E1_6" },
+      { id: "feature1", label: "E1_1" },
+      { id: "feature2", label: "E1_2" },
+      { id: "feature3", label: "E1_3" },
+      { id: "feature4", label: "E1_4" },
+      { id: "feature5", label: "E1_5" },
+      { id: "feature6", label: "E1_6" },
     ],
 
     // Layer 12 (Output - Bird Species Classification)

@@ -97,7 +97,7 @@ export default function AIBlobs() {
             }}
           >
             <Link
-              to={"/ai#usage"}
+              to={"/hardware#esp32-cam"}
               className="block h-full w-full hover:cursor-pointer"
             ></Link>
           </div>

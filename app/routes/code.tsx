@@ -14,20 +14,19 @@ const Network = [
 
 
     `
-    self.spatialAttention = nn.Sequential(
-        nn.Conv2d(2, 1, kernel_size=3, padding=1, bias=False),
-        nn.Sigmoid()
-    )
+    def forward(self, x):
+        b, c, _, _ = x.size()
+        
+        # Channel attention
+        avg_out = self.fc(self.avg_pool(x).view(b, c))
+        max_out = self.fc(self.max_pool(x).view(b, c))
+        
+        attention = self.sigmoid(avg_out + max_out).view(b, c, 1, 1)
+        
+        return x * attention.expand_as(x)
     `,
 
         `
-    self.channelAttention = nn.Sequential(
-      nn.AdaptiveAvgPool2d(1),
-      nn.Conv2d(channels, channels // reduction, 1, bias=False),
-      nn.ReLU(),
-      nn.Conv2d(channels // reduction, channels, 1, bias=False),
-      nn.Sigmoid()
-    )
     `,
 
     `
@@ -93,28 +92,17 @@ export default function network() {
                 </div>
 
                 <div className="flex flex-col space-y-5">
-                  <h1 className="text-[1.5rem] font-bold">2. Attention-Module: CBAM (Convolutional Block Attention Module)</h1>
-                  <p>Das CBAM (Convolutional Block Attention Module) ist ein leichtgewichtiges und zugleich äußerst effektives Modul, das speziell entwickelt wurde, 
-                    um neuronale Netze in ihrer Genauigkeit zu verbessern und relevante Merkmale innerhalb von Bilddaten hervorzuheben. 
-                    In unserer Architektur wird CBAM genutzt, um den von ResNet50 
+                  <h1 className="text-[1.5rem] font-bold">2. Attention-Module: Kanalaufmerksamkeit</h1>
+                  <p>Attention-Mechanismen sind inspiriert von der menschlichen Wahrnehmung und ermöglichen es neuronalen Netzwerken, sich auf die wichtigsten Teile der Eingabedaten zu konzentrieren.
+                    In unserer Architektur wird diese Methode genutzt, um den von ResNet50 
                     extrahierten Feature-Maps eine zusätzliche Fokussierung auf wichtige Bildbereiche und -kanäle zu ermöglichen. 
-                    Das Modul arbeitet sequentiell in zwei Phasen:</p>
-                  <div className="flex flex-col space-y-5">
-                    <h1 className="text-[1.2rem] font-bold">2.1. Channel Attention (Kanalaufmerksamkeit):</h1>
-                    <p>Das Channel Attention Modul bewertet die "Wichtigkeit" einzelner Kanäle, indem es globale Durchschnittswerte über die räumlichen Dimensionen berechnet. 
-                      Diese Kanalinformationen werden durch zwei 1x1 Convolutions mit Zwischenschritt der Reduktion und einer ReLU-Aktivierung verarbeitet. 
-                      Eine abschließende Sigmoid-Aktivierung liefert Gewichtungen zwischen 0 und 1, mit denen die ursprünglichen Feature-Maps skaliert werden. 
-                      So verstärkt das Modul relevante Kanäle und unterdrückt irrelevante.</p>
-                    <CodeBlock code={Network[2]}/>
-                  </div>
-                  <div className="flex flex-col space-y-5">
-                    <h1 className="text-[1.2rem] font-bold">2.2. Spatial Attention (Räumliche Aufmerksamkeit):</h1>
-                    <p>Das Spatial Attention Modul berechnet die Wichtigkeit einzelner räumlicher Positionen in den Feature-Maps. 
-                      Dazu werden zunächst pro Pixel der Mittelwert und Maximalwert über alle Kanäle berechnet und als zwei Kanäle zusammengeführt. 
-                      Ein 3x3 Faltungsfilter extrahiert daraus relevante räumliche Zusammenhänge. 
-                      Die anschließende Sigmoid-Aktivierung liefert eine räumliche Gewichtungsmaske, die die ursprünglichen Features positionsabhängig verstärkt oder abschwächt.                    </p>
+                    </p>
+                    <p>Zunächst wird die Eingabe durch Global Average Pooling und Global Max Pooling verdichtet, sodass für jeden Kanal jeweils ein repräsentativer Wert entsteht.
+                      Diese beiden Kanal-Deskriptoren werden anschließend durch ein zweistufiges Fully-Connected-Netzwerk geführt, das zuerst die Dimension reduziert und danach wieder auf die ursprüngliche Kanalanzahl projiziert.
+                      Die Ergebnisse der beiden Pfade werden addiert und durch eine Sigmoid-Funktion in Gewichte zwischen 0 und 1 transformiert.
+                      Diese Gewichte geben an, wie wichtig die einzelnen Kanäle sind, und werden genutzt, um die ursprünglichen Feature-Maps kanalweise zu skalieren.
+                      Dadurch werden informative Kanäle verstärkt und weniger relevante Kanäle abgeschwächt.</p>
                     <CodeBlock code={Network[1]}/>
-                  </div>
                 </div>
 
                 <div className="flex flex-col space-y-5">

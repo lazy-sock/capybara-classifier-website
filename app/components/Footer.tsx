@@ -14,8 +14,6 @@ export default function Footer() {
         <div className="flex flex-col">
           <h3 className="text-2xl">App</h3>
           <Link to="/app">App</Link>
-          <Link to="/cam">Kamera</Link>
-          <Link to="/connect">Verbindung</Link>
           <Link to="/wiki">Wiki</Link>
         </div>
         <div className="flex flex-col">
